@@ -1,0 +1,72 @@
+$colorRedBorder: rgba(248, 34, 73, 1);
+$colorRedOpacity: rgba(248, 34, 73, 0.2);
+$colorRedHover: rgba(192, 10, 44, 0.4);
+$colorTitle: rgba(226, 32, 117, 1);
+$borderGradient: linear-gradient(
+  145deg,
+  rgba(158, 61, 255, 1) 1.02%,
+  rgba(193, 0, 116, 1) 99.95%
+);
+
+@mixin buttonColor($color1, $color2, $color3) {
+  cursor: pointer;
+  border: 3px $color1 solid;
+  background-color: $color2;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: $color3;
+    left: 100%;
+    top: 0;
+    transition: all 0.3s ease 0.3s;
+    z-index: -1;
+  }
+
+  &:hover {
+    &::before {
+      left: 0;
+      width: 100%;
+      transition: left 0.3s, width 0.3s;
+    }
+  }
+}
+
+%hoverLink {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: $colorRedBorder;
+    transition: 0.3s;
+  }
+
+  &::before {
+    left: 100%;
+    top: 0;
+  }
+
+  &::after {
+    right: 100%;
+    bottom: 0;
+  }
+
+  &:hover {
+    &::after {
+      right: 0;
+      width: 100%;
+    }
+
+    &::before {
+      left: 0;
+      width: 100%;
+    }
+  }
+}
