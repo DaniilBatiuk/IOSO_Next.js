@@ -15,7 +15,6 @@
   }
 
   &__logo {
-    color: white;
     &:hover {
       color: white;
     }
@@ -47,7 +46,6 @@
   }
 
   &__item {
-    color: white;
     font-size: 26px;
     padding: 5px 12px;
     cursor: pointer;
@@ -55,7 +53,6 @@
     z-index: 5;
     @extend %hoverLink;
     &__sign-up {
-      color: white;
       font-size: 26px;
       padding: 5px 12px;
       cursor: pointer;
@@ -130,7 +127,6 @@
 
 .icon-menu {
   display: none;
-  color: white;
   @media (max-width: 767.98px) {
     & {
       display: flex;
@@ -169,26 +165,12 @@
   display: block;
 }
 
-.menu-open
-  body
-  .header
-  .header__container
-  .header__nav
-  .header__body
-  .header__list
-  .header__item {
+.menu-open body .header .header__container .header__nav .header__body .header__list .header__item {
   @media (max-width: 767.98px) {
     font-size: 40px;
   }
 }
-.menu-open
-  body
-  .header
-  .header__container
-  .header__nav
-  .header__body
-  .header__list
-  .header__item__sign-up {
+.menu-open body .header .header__container .header__nav .header__body .header__list .header__item__sign-up {
   border: none;
   background-color: inherit;
 }
@@ -203,7 +185,6 @@
   // display: none;
 }
 .svg1 {
-  color: white;
 }
 
 .lines {
@@ -213,19 +194,19 @@
   display: flex;
   top: 0;
   left: 0;
+  background-color: inherit;
 
   &__line-1 {
     border-right: 2px rgba(186, 29, 200, 0.4) solid;
     border-left: 2px rgba(186, 29, 200, 0.4) solid;
-    height: 6000px;
     width: 20%;
   }
+
   &__line-2,
   &__line-3,
   &__line-4,
   &__line-5 {
     border-right: 2px rgba(186, 29, 200, 0.4) solid;
-    height: 6000px;
     width: 20%;
   }
 

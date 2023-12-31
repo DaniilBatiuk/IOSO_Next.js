@@ -2,14 +2,26 @@
 
 .button {
   cursor: pointer;
-  width: clamp(280px, 60vw, 340px);
+  width: 330px;
   display: flex;
   align-items: center;
-  font-size: clamp(20px, 20vw, 30px);
+  font-size: 30px;
   font-weight: 600;
   border: 3px $colorRedBorder solid;
   position: relative;
-  height: clamp(90px, 20vw, 98px);
+  height: 98px;
+
+  @media (max-width: 1200.98px) {
+    width: 280px;
+    font-size: 26px;
+    height: 90px;
+  }
+
+  @media (max-width: 421.98px) {
+    width: 240px;
+    font-size: 25px;
+    height: 75px;
+  }
 
   &::before {
     content: "";
@@ -20,6 +32,7 @@
     top: 0;
     transition: all 0.3s ease 0s;
     z-index: -1;
+    background-color: $colorRedHover;
   }
 
   &_text {
@@ -54,7 +67,6 @@
 
   &:hover {
     &::before {
-      background-color: $colorRedHover;
       bottom: 0;
       height: 100%;
       transition: all 0.3s ease 0.3s;
