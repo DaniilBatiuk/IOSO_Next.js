@@ -20,6 +20,14 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
 
   return (
     <header className="header">
+      {!isVisible && (
+        <style>{`
+          .header:after {
+            border-bottom: none;
+          }
+        `}</style>
+      )}
+
       <div className="header__container">
         <a href="/" className="header__logo">
           IOSO
@@ -34,7 +42,7 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
                 <Link href="/SignIn">Sign In</Link>
               </li>
               <li className="header__item__sign-up">
-                <Link href="/">Sign Up</Link>
+                <Link href="/SignUp">Sign Up</Link>
               </li>
             </ul>
           </div>

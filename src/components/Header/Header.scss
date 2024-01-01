@@ -18,7 +18,7 @@
     &:hover {
       color: white;
     }
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 700;
     position: relative;
     z-index: 10;
@@ -54,7 +54,7 @@
     @extend %hoverLink;
     &__sign-up {
       font-size: 26px;
-      padding: 5px 12px;
+      padding: 6px 12px;
       cursor: pointer;
       position: relative;
       z-index: 5;

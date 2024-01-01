@@ -5,6 +5,7 @@ import Main from "@/../public/Main3.png";
 import SubMain from "@/../public/SubMain.png";
 import Button from "@/components/UI/Button/Button";
 import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -20,7 +21,9 @@ export default function Home() {
           <section className={`${styles.main}`}>
             <div className={`${styles.main_title}`}>IOSO online test and quiz maker</div>
             <div className={`${styles.main_subtitle}`}>Create, send and analyze your tests, quizzes and assessments for free with IOSO</div>
-            <Button>Get started</Button>
+            <Link href="/SignUp">
+              <Button>Get started</Button>
+            </Link>
           </section>
           <section className={`${styles.info}`}>
             <div className={`${styles.info__title}`}>You need to make a test?</div>
@@ -31,7 +34,9 @@ export default function Home() {
                   tests, the opportunity to create your own and share it with colleagues. This and many other features are free. Plus, you can see the results in a few seconds and find out who is the
                   best in the class. See for yourself.
                 </div>
-                <Button>Get started</Button>
+                <Link href="/SignUp">
+                  <Button>Get started</Button>
+                </Link>
               </div>
               <div className={`${styles.info__right}`}>
                 <Image src={SubMain.src} alt="MainPhoto" priority={true} width={608} height={752} className={`${styles.info__photo}`} />
@@ -128,7 +133,9 @@ export default function Home() {
               <div className={`${styles.block__title}`}>IOSO is a powerful online test generator</div>
               <div className={`${styles.block__subtitle}`}>Build your own online tests and assessments with IOSO for free</div>
             </div>
-            <Button>Get Started</Button>
+            <Link href="/SignUp">
+              <Button>Get started</Button>
+            </Link>
           </div>
         </section>
         <Footer />
