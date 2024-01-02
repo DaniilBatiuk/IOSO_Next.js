@@ -25,6 +25,10 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
           .header:after {
             border-bottom: none;
           }
+          .header{
+            background-color:rgba(255, 255, 255, 0.2);
+            padding-bottom:20px;
+          }
         `}</style>
       )}
 
@@ -36,7 +40,7 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
           <div className="header__body">
             <ul className="header__list">
               <li className="header__item">
-                <Link href="/">Test</Link>
+                <Link href="/Quizzes">Quizzes</Link>
               </li>
               <li className="header__item">
                 <Link href="/SignIn">Sign In</Link>

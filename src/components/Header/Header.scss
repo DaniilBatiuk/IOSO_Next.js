@@ -7,7 +7,7 @@
   &::after {
     content: "";
     position: absolute;
-    top: 65px;
+    top: 70px;
     left: 0;
     width: 100vw;
     border-bottom: 2px rgba(186, 29, 200, 0.4) solid;
@@ -54,17 +54,20 @@
     @extend %hoverLink;
     &__sign-up {
       font-size: 26px;
-      padding: 6px 12px;
+      padding: 7px 25px;
+      border-radius: 10px;
       cursor: pointer;
       position: relative;
       z-index: 5;
+      color: rgba(55, 255, 255, 1);
       @media (min-width: 767.98px) {
-        @include buttonColor($colorRedBorder, $colorRedOpacity, $colorRedHover);
+        @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
       }
 
       @media (max-width: 767.98px) {
         position: relative;
         font-size: 40px;
+        color: white;
         &::before,
         &::after {
           content: "";
