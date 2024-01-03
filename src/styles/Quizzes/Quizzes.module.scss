@@ -13,7 +13,8 @@
     gap: 20px;
     flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
+    background-color: rgba(70, 233, 255, 0.1);
+    border-radius: 10px;
     min-height: 82px;
     padding: 19px 36px;
 
@@ -28,9 +29,9 @@
     font-weight: 700;
     letter-spacing: 1.8px;
     color: transparent;
-    -webkit-text-stroke: 2px rgb(82, 229, 248);
+    -webkit-text-stroke: 2px $colorBlueTitle;
 
-    @media (max-width: 441.98px) {
+    @media (max-width: 1111.98px) {
       width: 100%;
       text-align: center;
     }
@@ -69,5 +70,112 @@
 
   @media (max-width: 952.98px) {
     gap: 10px;
+  }
+}
+
+.quizzes {
+  &__table {
+    width: 100%;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: block;
+      width: 5px;
+      overflow: auto;
+      height: 5px;
+      background-color: lightgray;
+      border-radius: 30px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: gray;
+      border-radius: 30px;
+    }
+  }
+  &__list {
+    margin-top: 40px;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(89, 231, 250, 0.1);
+    border-radius: 10px;
+    row-gap: 7px;
+    width: 100%;
+
+    & th,
+    td {
+      padding: 1rem;
+      font-size: clamp(16px, 4vw, 18px);
+    }
+
+    & th {
+      text-align: left;
+      border-bottom: 1px $colorBlueTitle solid;
+    }
+
+    & tr:nth-child(2n) {
+      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(70, 233, 255, 0.1);
+    }
+
+    & tr {
+      color: rgb(190, 190, 190);
+    }
+  }
+}
+
+.item {
+  &__title {
+    font-size: clamp(18px, 4vw, 20px) !important;
+    color: white;
+    font-weight: 600;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+  }
+
+  &__data {
+    min-width: 170px;
+  }
+
+  &__deadline {
+    min-width: 100px;
+  }
+
+  &__creator {
+    color: rgb(190, 190, 190);
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
+  &__status_open {
+    text-align: center;
+    padding: 5px 24px;
+    color: rgba(30, 252, 11, 1);
+    background-color: rgba(30, 252, 11, 0.2);
+    border-radius: 5px;
+    font-weight: 500;
+  }
+
+  &__status_close {
+    text-align: center;
+    padding: 5px 24px;
+    color: rgb(255, 68, 68);
+    background-color: rgba(255, 0, 0, 0.3);
+    border-radius: 5px;
+    font-weight: 500;
+  }
+
+  &__button {
+    color: $colorBlueTitle;
+    border-radius: 5px;
+    padding: 5px 29px;
+    font-weight: 700;
+    @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
+
+    // @media (max-width: 1012.98px) {
+    //   padding: 5px 38px;
+    // }
   }
 }

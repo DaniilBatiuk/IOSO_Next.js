@@ -29,7 +29,10 @@
     row-gap: 41px;
     position: relative;
     z-index: 8;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-top: 2px rgba(186, 29, 200, 0.4) solid;
+    padding-top: 20px;
+    backdrop-filter: blur(2px);
   }
 
   &__icon {

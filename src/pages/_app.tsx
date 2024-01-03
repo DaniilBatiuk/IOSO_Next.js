@@ -5,7 +5,8 @@ import type { AppProps } from "next/app";
 import Header from "@/components/Header/Header";
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
-
+import { useRouter } from "next/router";
+import Footer from "@/components/Footer/Footer";
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -20,6 +21,13 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [refComponent]);
 
+  const router = useRouter();
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsVisible(router.pathname !== "/SignIn" && router.pathname !== "/SignUp" && router.pathname !== "/");
+  }, [router]);
+
   return (
     <>
       <Head>
@@ -30,6 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <main className={inter.className}>
           <Component {...pageProps} />
         </main>
+        {isVisible && <Footer />}
       </div>
     </>
   );
