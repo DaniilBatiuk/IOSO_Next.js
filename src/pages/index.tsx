@@ -6,7 +6,9 @@ import SubMain from "@/../public/SubMain.png";
 import Button from "@/components/UI/Button/Button";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
-
+import Svg1 from "@/../public/Icon.svg";
+import Svg2 from "@/../public/Icon1.svg";
+import Svg3 from "@/../public/Icon2.svg";
 export default function Home() {
   return (
     <>
@@ -49,32 +51,7 @@ export default function Home() {
           <section className={`${styles.how__list}`}>
             <div className={`${styles.how__list__item}`}>
               <div className={`${styles.how__icon}`}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
-                  <path
-                    d="M95.2381 42.8572H52.381C47.3292 42.8572 42.4844 44.864 38.9123 48.4361C35.3401 52.0082 33.3333 56.8531 33.3333 61.9048V147.619C33.3333 152.671 35.3401 157.516 38.9123 161.088C42.4844 164.66 47.3292 166.667 52.381 166.667H147.619C152.671 166.667 157.516 164.66 161.088 161.088C164.66 157.516 166.667 152.671 166.667 147.619V104.762"
-                    stroke="url(#paint0_linear_12_48)"
-                    strokeWidth="4.7619"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M147.619 52.381L156.695 61.9048M166.667 33.0191C169.206 35.6444 170.611 39.1621 170.581 42.8141C170.551 46.4662 169.087 49.9601 166.505 52.5429L100 119.048L71.4286 128.571L80.9524 100L147.495 32.8953C149.835 30.5379 152.965 29.1318 156.281 28.9489C159.597 28.7659 162.863 29.8191 165.448 31.9048L166.667 33.0191Z"
-                    stroke="url(#paint1_linear_12_48)"
-                    strokeWidth="4.7619"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <defs>
-                    <linearGradient id="paint0_linear_12_48" x1="35.7724" y1="42.8572" x2="128.689" y2="190.646" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#9E3DFF" />
-                      <stop offset="1" stopColor="#C10074" />
-                    </linearGradient>
-                    <linearGradient id="paint1_linear_12_48" x1="73.2424" y1="28.9285" x2="150.428" y2="142.367" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#9E3DFF" />
-                      <stop offset="1" stopColor="#C10074" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                <Image src={Svg1.src} alt="Icon" width={200} height={200} />
               </div>
               <div className={`${styles.how__list__info}`}>
                 <div className={`${styles.how__list__title}`}>Create</div>
@@ -83,18 +60,7 @@ export default function Home() {
             </div>
             <div className={`${styles.how__list__item}`}>
               <div className={`${styles.how__icon}`}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
-                  <path
-                    d="M95.8333 158.333V86.25L76.4167 105.667L70.5167 99.6833L100 70.1916L129.483 99.6833L123.592 105.675L104.167 86.25V158.333H95.8333ZM41.6667 75.3166V55.125C41.6667 51.2916 42.9528 48.0916 45.525 45.525C48.0917 42.9527 51.2917 41.6666 55.125 41.6666H144.875C148.708 41.6666 151.908 42.9527 154.475 45.525C157.047 48.0916 158.333 51.2916 158.333 55.125V75.3166H150V55.125C150 53.8472 149.467 52.6722 148.4 51.6C147.328 50.5333 146.153 50 144.875 50H55.125C53.8472 50 52.6722 50.5333 51.6 51.6C50.5333 52.6722 50 53.8472 50 55.125V75.3166H41.6667Z"
-                    fill="url(#paint0_linear_12_54)"
-                  />
-                  <defs>
-                    <linearGradient id="paint0_linear_12_54" x1="43.8008" y1="41.6666" x2="134.009" y2="174.899" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#9E3DFF" />
-                      <stop offset="1" stopColor="#C10074" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                <Image src={Svg2.src} alt="Icon" width={200} height={200} />
               </div>
               <div className={`${styles.how__list__info}`}>
                 <div className={`${styles.how__list__title}`}>Publish</div>
@@ -103,21 +69,7 @@ export default function Home() {
             </div>
             <div className={`${styles.how__list__item}`}>
               <div className={`${styles.how__icon}`}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
-                  <path
-                    d="M14.5833 104.242H55.7375L65.225 58.5208L74.7167 142.529L84.2042 37.7583L93.6958 162.242L103.183 38.3041L112.675 151.783L122.163 45.925L131.654 124.075L141.142 56.5041L150.633 103.85H185.417"
-                    stroke="url(#paint0_linear_12_56)"
-                    strokeWidth="2.08333"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <defs>
-                    <linearGradient id="paint0_linear_12_56" x1="17.7083" y1="37.7583" x2="99.9736" y2="204.5" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#9E3DFF" />
-                      <stop offset="1" stopColor="#C10074" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                <Image src={Svg3.src} alt="Icon" width={200} height={200} />
               </div>
               <div className={`${styles.how__list__info}`}>
                 <div className={`${styles.how__list__title}`}>Analyze</div>
