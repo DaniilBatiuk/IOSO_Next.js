@@ -7,17 +7,20 @@
   }
 
   &__form {
-    margin-top: 58px;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    background-color: rgba(255, 255, 255, 0.2);
-    background-color: rgba(70, 233, 255, 0.1);
+    background-color: $backgroundColorBlue;
     border-radius: 10px;
     min-height: 82px;
     padding: 19px 36px;
+
+    @media (max-width: 1041.98px) {
+      margin-top: 20px;
+    }
 
     @media (max-width: 441.98px) {
       padding: 19px 10px;
@@ -25,7 +28,7 @@
   }
 
   &__title {
-    font-size: clamp(26px, 4vw, 36px);
+    font-size: clamp(30px, 4vw, 36px);
     font-size: 36px;
     font-weight: 700;
     letter-spacing: 1.8px;
@@ -110,7 +113,7 @@
   border-left: 4px rgb(0, 225, 255) solid;
   color: rgb(190, 190, 190);
   font-size: clamp(16px, 4vw, 18px);
-  background-color: rgba(70, 233, 255, 0.1);
+  background-color: $backgroundColorBlue;
   border-radius: 10px;
   padding: 12px;
   width: 49.2%;
