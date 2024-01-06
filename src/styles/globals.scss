@@ -102,6 +102,11 @@ main {
     font-size: clamp(18px, 4vw, 20px) !important;
     padding: 3px 0px !important;
     padding-left: 10px !important;
+
+    &:hover,
+    &:focus {
+      border: 2px solid rgb(0, 225, 255) !important;
+    }
   }
 
   &__placeholder {

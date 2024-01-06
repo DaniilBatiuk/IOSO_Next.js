@@ -1,14 +1,33 @@
 import styles from "@/styles/CreateQuiz/CreateQuiz.module.scss";
 import { clsx } from "clsx";
+import Image from "next/image";
 import { useState } from "react";
+import Group from "@/../public/Group.svg";
+import Person from "@/../public/Person.svg";
+import Planet from "@/../public/Planet.svg";
+import Private from "@/../public/Private.svg";
+import Information from "@/../public/Information.svg";
+import MySelect from "@/components/MySelect/MySelect";
+import BasicSettings from "@/components/BasicSettings/BasicSettings";
+import QuestionsManager from "@/components/QuestionsManager/QuestionsManager";
+import TestAccess from "@/components/TestAccess/TestAccess";
+import TimeSettings from "@/components/TimeSettings/TimeSettings";
 
 export default function CreateQuiz() {
   const [active, setActive] = useState<number>(0);
-  const [menuActive, setMenuActive] = useState<boolean>(false);
+  const [menuActive, setMenuActive] = useState<boolean>(true);
+
   return (
     <>
       {!menuActive && <div className={styles.create__dark} onClick={() => setMenuActive(prev => !prev)}></div>}
       <div className={styles.create__container}>
+        {!menuActive && (
+          <style>{`
+          body {
+            overflow: hidden;
+          }
+        `}</style>
+        )}
         <aside className={!menuActive ? styles.create__body__active : styles.create__body}>
           <div className={styles.create__title}>
             Quiz configuration
@@ -108,20 +127,7 @@ export default function CreateQuiz() {
             </button>
             <div className={styles.right__title}>{active === 0 ? "Basic settings" : active === 1 ? "Questions manager" : active === 2 ? "Test access" : "Time settings"}</div>
           </div>
-          <div className={styles.right}>
-            {active === 0 && (
-              <>
-                <form action="#" className={`${styles.form}`}>
-                  <div className={`${styles.form__inputs}`}>
-                    <input type="text" placeholder="Insert quiz name" />
-                  </div>
-                </form>
-              </>
-            )}
-            {active === 1 && <div className={styles.right__title}>Questions manager</div>}
-            {active === 2 && <div className={styles.right__title}>Test access</div>}
-            {active === 3 && <div className={styles.right__title}>Time settings</div>}
-          </div>
+          {active === 0 ? <BasicSettings /> : active === 1 ? <QuestionsManager /> : active === 2 ? <TestAccess /> : <TimeSettings />}
         </section>
       </div>
     </>
