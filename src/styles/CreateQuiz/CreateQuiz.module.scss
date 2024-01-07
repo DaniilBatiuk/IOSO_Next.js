@@ -165,7 +165,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 35px;
     // @media (max-width: 850.98px) {
     //   margin-top: 52px;
     //   row-gap: 22px;
@@ -192,6 +191,38 @@
       }
     }
   }
+
+  &__range {
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    width: 300px;
+    justify-content: space-between;
+
+    & div {
+      width: 200px;
+    }
+
+    // & span {
+    //   color: aqua;
+    // }
+
+    &__view {
+      margin-top: 20px;
+      font-weight: 700;
+      font-size: clamp(20px, 4vw, 22px);
+    }
+  }
+
+  &__ranges {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    @media (max-width: 767.98px) {
+      row-gap: 0px;
+    }
+  }
 }
 
 .right {
@@ -208,6 +239,12 @@
   }
 
   &__subtitle {
+    font-size: clamp(18px, 4vw, 20px);
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle_mar {
     font-size: clamp(18px, 4vw, 20px);
     font-weight: 400;
     margin-bottom: 15px;
@@ -266,11 +303,20 @@
 }
 
 .marginBot {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .button__save {
-  margin-top: 30px;
+  margin-top: 40px;
+  color: $colorBlueTitle;
+  border-radius: 5px;
+  padding: 4px 15px;
+  font-weight: 700;
+  font-size: clamp(18px, 4vw, 20px);
+  @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
+}
+.button__create {
+  margin-top: 20px;
   color: $colorBlueTitle;
   border-radius: 5px;
   padding: 4px 15px;

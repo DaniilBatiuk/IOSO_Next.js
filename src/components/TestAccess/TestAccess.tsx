@@ -9,23 +9,25 @@ import Private from "@/../public/Private.svg";
 import Information from "@/../public/Information.svg";
 import Exist from "@/../public/Exist.svg";
 import Create from "@/../public/Create.svg";
-import MySelect from "@/components/MySelect/MySelect";
+import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 const TestAccess: React.FC = () => {
   const [accessActive, setAccessActive] = useState<number>(0);
   const [groupActive, setGroupActive] = useState<number>(0);
-  const options = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "5", label: "5" },
-    { value: "10", label: "10" },
-    { value: "Infinity", label: "Infinity" },
-  ];
+
+  const [age, setAge] = useState("");
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value);
+  };
 
   return (
     <div className={styles.right}>
-      <div className={styles.right__subtitle}>Access type</div>
+      <div className={styles.right__subtitle_mar}>Access type</div>
       <div className={styles.right__list}>
         <button className={clsx(styles.right__item, { [styles.right__item__active]: accessActive === 0 })} onClick={() => setAccessActive(0)}>
           <Image src={Person.src} alt="Icon" width={30} height={30} />
@@ -60,15 +62,12 @@ const TestAccess: React.FC = () => {
         {accessActive === 1 && (
           <>
             <div className={styles.right__subtitle}>Access code</div>
-
-            <div className={`${styles.form__inputs}`}>
-              <input type="text" placeholder="Insert quiz access code" />
-            </div>
+            <TextField fullWidth id="standard-basic" label="Insert quiz access code" variant="standard" />
           </>
         )}
         {accessActive === 3 && (
           <>
-            <div className={styles.right__subtitle}>Group</div>
+            <div className={styles.right__subtitle_mar}>Group</div>
             <div className={`${styles.right__list} ${styles.marginBot}`}>
               <button type="button" className={clsx(styles.right__item, { [styles.right__item__active]: groupActive === 0 })} onClick={() => setGroupActive(0)}>
                 <Image src={Exist.src} alt="Icon" width={30} height={30} />
@@ -80,19 +79,37 @@ const TestAccess: React.FC = () => {
               </button>
             </div>
             {groupActive === 0 ? (
-              <MySelect options={options} placeholder="Select group" />
+              <FormControl variant="standard" sx={{ m: 1, minWidth: "100% " }}>
+                <InputLabel id="demo-simple-select-standard-label">Select group</InputLabel>
+                <Select labelId="demo-simple-select-standard-label" id="demo-simple-select-standard" value={age} onChange={handleChange} label="Age">
+                  <MenuItem value={1}>1</MenuItem>
+                  <MenuItem value={2}>2</MenuItem>
+                  <MenuItem value={3}>3</MenuItem>
+                  <MenuItem value={5}>3</MenuItem>
+                  <MenuItem value={10}>3</MenuItem>
+                  <MenuItem value={"Infinity"}>Infinity</MenuItem>
+                </Select>
+              </FormControl>
             ) : (
               <>
-                <div className={`${styles.form__inputs}`}>
-                  <input type="text" placeholder="Insert group name" />
-                </div>
-                <button className={styles.button__save}>Create</button>
+                <TextField fullWidth id="standard-basic" label="Insert group name" variant="standard" />
+                <button className={styles.button__create}>Create</button>
               </>
             )}
           </>
         )}
         <div className={`${styles.right__subtitle} ${styles.marginTop}`}>Attempts per respondent</div>
-        <MySelect options={options} placeholder="Select attempts count" />
+        <FormControl variant="standard" sx={{ m: 1, minWidth: "100% " }}>
+          <InputLabel id="demo-simple-select-standard-label">Select attempts count</InputLabel>
+          <Select labelId="demo-simple-select-standard-label" id="demo-simple-select-standard" value={age} onChange={handleChange} label="Age">
+            <MenuItem value={1}>1</MenuItem>
+            <MenuItem value={2}>2</MenuItem>
+            <MenuItem value={3}>3</MenuItem>
+            <MenuItem value={5}>3</MenuItem>
+            <MenuItem value={10}>3</MenuItem>
+            <MenuItem value={"Infinity"}>Infinity</MenuItem>
+          </Select>
+        </FormControl>
         <button type="submit" className={styles.button__save}>
           Save
         </button>
