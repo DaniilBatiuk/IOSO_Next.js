@@ -163,3 +163,14 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   background-color: transparent !important;
 }
+
+.MuiOutlinedInput-notchedOutline {
+  border: none;
+  border-radius: 0px;
+  border-bottom: 2px rgba(54, 169, 184, 1) solid;
+  transition-duration: 10ms;
+}
+
+.MuiPaper-root {
+  background-color: rgba(54, 169, 184, 1);
+}

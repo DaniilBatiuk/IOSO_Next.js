@@ -240,13 +240,15 @@
 
   &__subtitle {
     font-size: clamp(18px, 4vw, 20px);
-    font-weight: 400;
+    color: rgb(3, 247, 255);
+    font-weight: 700;
     margin-bottom: 5px;
   }
 
   &__subtitle_mar {
+    color: rgb(3, 247, 255);
     font-size: clamp(18px, 4vw, 20px);
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 15px;
   }
 
@@ -300,6 +302,10 @@
 
 .marginTop {
   margin-top: 30px;
+}
+
+.marginTopLit {
+  margin-top: 10px;
 }
 
 .marginBot {

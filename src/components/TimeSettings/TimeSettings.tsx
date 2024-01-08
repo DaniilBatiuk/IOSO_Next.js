@@ -1,15 +1,25 @@
 import styles from "@/styles/CreateQuiz/CreateQuiz.module.scss";
 import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Slider from "@mui/material/Slider";
 import TextField from "@mui/material/TextField";
+import dayjs, { Dayjs } from "dayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { useState } from "react";
 
 const TimeSettings: React.FC = () => {
   const [hours, setHours] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
+  const [check, setCheck] = useState<string>("Lack");
+  const [check2, setCheck2] = useState<string>("Lack");
+  const [value, setValue] = useState<Dayjs | null>(dayjs("2022-04-17"));
 
   const handleHoursChange = (event: Event, value: number | number[], activeThumb: number) => {
     setHours(value as number);
@@ -41,39 +51,84 @@ const TimeSettings: React.FC = () => {
     setAge(event.target.value);
   };
 
+  const handlerChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCheck(event.target.value);
+  };
+
+  const handlerChange3 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCheck2(event.target.value);
+  };
+
   return (
     <div className={styles.right}>
-      <div className={styles.right__subtitle_mar}>Test duration</div>
+      <div className={styles.right__subtitle_mar}>Quiz duration</div>
       <form action="#" className={`${styles.form}`} onSubmit={handleSubmit}>
-        <div className={`${styles.form__ranges}`}>
-          <div className={`${styles.form__range}`}>
-            <label htmlFor="Hours">Hours</label>
-            <div>
-              <Slider aria-label="Temperature" id="Hours" name="Hours" getAriaValueText={valuetext} valueLabelDisplay="auto" defaultValue={0} min={0} max={23} onChange={handleHoursChange} />
+        <RadioGroup value={check} onChange={handlerChange2} row aria-labelledby="demo-row-radio-buttons-group-label" name="row-radio-buttons-group">
+          <FormControlLabel value="Lack" control={<Radio />} label="Lack" />
+          <FormControlLabel value="Select" control={<Radio />} label="Select" />
+        </RadioGroup>
+
+        {check === "Select" && (
+          <>
+            <div className={`${styles.form__ranges}`}>
+              <div className={`${styles.form__range}`}>
+                <label htmlFor="Hours">Hours</label>
+                <div>
+                  <Slider aria-label="Temperature" id="Hours" name="Hours" getAriaValueText={valuetext} valueLabelDisplay="auto" defaultValue={0} min={0} max={23} onChange={handleHoursChange} />
+                </div>
+              </div>
+              <div className={`${styles.form__range}`}>
+                <label htmlFor="Minutes">Minutes</label>
+                <div>
+                  <Slider
+                    aria-label="Temperature"
+                    id="Minutes"
+                    name="Minutes"
+                    getAriaValueText={valuetext2}
+                    valueLabelDisplay="auto"
+                    defaultValue={0}
+                    min={0}
+                    max={59}
+                    onChange={handleMinutesChange}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-          <div className={`${styles.form__range}`}>
-            <label htmlFor="Minutes">Minutes</label>
-            <div>
-              <Slider aria-label="Temperature" id="Minutes" name="Minutes" getAriaValueText={valuetext2} valueLabelDisplay="auto" defaultValue={0} min={0} max={59} onChange={handleMinutesChange} />
+            <div className={`${styles.form__range__view}`}>
+              {formatTime(hours)}:{formatTime(minutes)}
             </div>
-          </div>
-        </div>
-        <div className={`${styles.form__range__view}`}>
-          {formatTime(hours)}:{formatTime(minutes)}
-        </div>
-        <TextField id="standard-basic" label="Standard" variant="standard" />
-        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="demo-simple-select-standard-label">Age</InputLabel>
-          <Select labelId="demo-simple-select-standard-label" id="demo-simple-select-standard" value={age} onChange={handleChange} label="Age">
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-        </FormControl>
+          </>
+        )}
+
+        <div className={`${styles.right__subtitle_mar} ${styles.marginTop}`}>Quiz deadline</div>
+        <RadioGroup value={check2} onChange={handlerChange3} row aria-labelledby="demo-row-radio-buttons-group-label" name="row-radio-buttons-group">
+          <FormControlLabel value="Lack" control={<Radio />} label="Lack" />
+          <FormControlLabel value="Select" control={<Radio />} label="Select" />
+        </RadioGroup>
+        {check2 === "Select" && (
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+              className={styles.marginTopLit}
+              sx={{
+                "&:hover .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "rgb(0, 225, 255)",
+                  transition: "border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;",
+                  borderWidth: 3,
+                },
+                ".MuiSvgIcon-root": {
+                  color: "white",
+                },
+                ".react-date-picker__calendar": {
+                  backgroundColor: "rgba(54, 169, 184, 1)",
+                },
+              }}
+              label="Select deadline date"
+              value={value}
+              onChange={newValue => setValue(newValue)}
+            />
+          </LocalizationProvider>
+        )}
+        <br />
         <button type="submit" className={styles.button__save}>
           Save
         </button>

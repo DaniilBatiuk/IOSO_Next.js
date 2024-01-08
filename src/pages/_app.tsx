@@ -81,6 +81,13 @@ export default function App({ Component, pageProps }: AppProps) {
           },
         },
       },
+      MuiRadio: {
+        styleOverrides: {
+          root: {
+            color: "#ffffff", // Цвет Radio Button
+          },
+        },
+      },
     },
   });
 

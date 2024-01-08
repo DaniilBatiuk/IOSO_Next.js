@@ -4,6 +4,9 @@ import SignInBack from "@/../public/SignInBack.png";
 import SignInFront from "@/../public/SignInFront.png";
 import Button from "@/components/UI/Button/Button";
 import Link from "next/link";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 export default function SignIn() {
   return (
     <>
@@ -17,14 +20,71 @@ export default function SignIn() {
             <div className={`${styles.signIn__title}`}>Sign In</div>
             <form action="#" className={`${styles.form}`}>
               <div className={`${styles.form__inputs}`}>
-                <input type="text" placeholder="Insert Email" />
-                <input type="password" placeholder="Insert Password" />
-                <div className={`${styles.form__checkbox}`}>
-                  <input type="checkbox" />
-                  <p>Remember me</p>
-                </div>
+                <TextField
+                  fullWidth
+                  id="standard-basic"
+                  label="Insert email"
+                  variant="standard"
+                  inputProps={{ style: { fontSize: 25 } }}
+                  InputLabelProps={{ style: { fontSize: 25 } }}
+                  sx={{
+                    "& label.Mui-focused": {
+                      color: "white",
+                    },
+                    "& .MuiInput-underline:after": {
+                      borderBottomColor: "white",
+                    },
+                    "& .MuiInput-root:before": {
+                      borderBottomColor: "white",
+                    },
+                    "& .MuiInput-root:after": {
+                      borderBottomColor: "white",
+                    },
+                    ".MuiInput-root:hover:not(.Mui-disabled):before": {
+                      borderBottomColor: "white",
+                    },
+                  }}
+                />
+                <TextField
+                  fullWidth
+                  id="standard-basic"
+                  label="Insert password"
+                  variant="standard"
+                  inputProps={{ style: { fontSize: 25 } }}
+                  InputLabelProps={{ style: { fontSize: 25 } }}
+                  sx={{
+                    "& label.Mui-focused": {
+                      color: "white",
+                    },
+                    "& .MuiInput-underline:after": {
+                      borderBottomColor: "white",
+                    },
+                    "& .MuiInput-root:before": {
+                      borderBottomColor: "white",
+                    },
+                    "& .MuiInput-root:after": {
+                      borderBottomColor: "white",
+                    },
+                    ".MuiInput-root:hover:not(.Mui-disabled):before": {
+                      borderBottomColor: "white",
+                    },
+                  }}
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      defaultChecked
+                      sx={{
+                        color: "white",
+                        "&.Mui-checked": {
+                          color: "white",
+                        },
+                      }}
+                    />
+                  }
+                  label="Remember me"
+                />
               </div>
-
               <Button type="submit" colorBorder="rgba(255, 255, 255,1)" colorHover="rgba(255, 255, 255,0.3)">
                 Sign In
               </Button>
