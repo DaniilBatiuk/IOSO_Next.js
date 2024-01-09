@@ -1,13 +1,9 @@
 import styles from "@/styles/CreateQuiz/CreateQuiz.module.scss";
-import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { SelectChangeEvent } from "@mui/material/Select";
 import Slider from "@mui/material/Slider";
-import TextField from "@mui/material/TextField";
 import dayjs, { Dayjs } from "dayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -110,16 +106,24 @@ const TimeSettings: React.FC = () => {
             <DatePicker
               className={styles.marginTopLit}
               sx={{
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgb(0, 225, 255)",
-                  transition: "border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;",
-                  borderWidth: 3,
-                },
-                ".MuiSvgIcon-root": {
-                  color: "white",
-                },
-                ".react-date-picker__calendar": {
-                  backgroundColor: "rgba(54, 169, 184, 1)",
+                svg: { color: "white" },
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderTop: "none",
+                    borderLeft: "none",
+                    borderRight: "none",
+                    borderRadius: 0,
+                    borderBottomColor: "rgba(54, 169, 184, 1)",
+                    borderBottomWidth: "2px",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "rgb(0, 225, 255)",
+                    borderBottomWidth: "3px",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "rgb(0, 225, 255)",
+                    borderBottomWidth: "3px",
+                  },
                 },
               }}
               label="Select deadline date"

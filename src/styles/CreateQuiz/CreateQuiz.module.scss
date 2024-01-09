@@ -161,6 +161,31 @@
   z-index: 2;
 }
 .form {
+  &__answers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4px;
+  }
+
+  &__answers__div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    & svg {
+      align-self: flex-end;
+      cursor: pointer;
+      transition-duration: 0.2s;
+      margin-left: 2%;
+      border-radius: 2px;
+      &:hover {
+        fill: rgb(0, 225, 255);
+        color: rgb(0, 225, 255);
+        background-color: rgb(0, 225, 255);
+      }
+    }
+  }
   &__inputs {
     display: flex;
     flex-direction: column;
