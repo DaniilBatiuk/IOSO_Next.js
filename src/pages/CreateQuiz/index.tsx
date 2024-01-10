@@ -1,13 +1,6 @@
 import styles from "@/styles/CreateQuiz/CreateQuiz.module.scss";
 import { clsx } from "clsx";
-import Image from "next/image";
 import { useState } from "react";
-import Group from "@/../public/Group.svg";
-import Person from "@/../public/Person.svg";
-import Planet from "@/../public/Planet.svg";
-import Private from "@/../public/Private.svg";
-import Information from "@/../public/Information.svg";
-import MySelect from "@/components/MySelect/MySelect";
 import BasicSettings from "@/components/BasicSettings/BasicSettings";
 import QuestionsManager from "@/components/QuestionsManager/QuestionsManager";
 import TestAccess from "@/components/TestAccess/TestAccess";
