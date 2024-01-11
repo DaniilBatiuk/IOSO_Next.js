@@ -9,7 +9,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 export default function SignIn() {
   return (
-    <>
+    <div className={`${styles.signIn}`}>
       <Image src={SignInBack.src} alt="SignInBack" fill={true} className={`${styles.signIn__photo}`} />
       <div className={`${styles.signIn__container}`}>
         <div className={`${styles.signIn__block}`}>
@@ -22,7 +22,6 @@ export default function SignIn() {
               <div className={`${styles.form__inputs}`}>
                 <TextField
                   fullWidth
-                  id="standard-basic"
                   label="Insert email"
                   variant="standard"
                   inputProps={{ style: { fontSize: 25 } }}
@@ -47,7 +46,6 @@ export default function SignIn() {
                 />
                 <TextField
                   fullWidth
-                  id="standard-basic"
                   label="Insert password"
                   variant="standard"
                   inputProps={{ style: { fontSize: 25 } }}
@@ -98,6 +96,6 @@ export default function SignIn() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

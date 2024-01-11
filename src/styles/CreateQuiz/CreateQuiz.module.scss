@@ -101,10 +101,6 @@
   &__body {
     width: 29%;
     min-width: 264px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 40px;
-
     @media (max-width: 890.98px) {
       row-gap: 20px;
     }
@@ -135,6 +131,14 @@
       transition: all 0.3s ease 0s;
       z-index: 10;
     }
+
+    &__inside {
+      position: sticky;
+      top: 30px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 40px;
+    }
   }
 }
 
@@ -161,7 +165,7 @@
   z-index: 2;
 
   @media (max-width: 767.98px) {
-    padding: 0px;
+    padding: 10px;
   }
 }
 .form {
@@ -182,6 +186,8 @@
     background-color: rgba(66, 233, 255, 0.1);
     border-radius: 10px;
     padding: 15px;
+    padding-top: 35px;
+    position: relative;
   }
 
   &__answers__div {
@@ -242,10 +248,6 @@
       width: 200px;
     }
 
-    // & span {
-    //   color: aqua;
-    // }
-
     &__view {
       margin-top: 20px;
       font-weight: 700;
@@ -279,13 +281,23 @@
 
   &__subtitle {
     font-size: clamp(18px, 4vw, 20px);
-    color: rgb(3, 247, 255);
+    color: rgb(82, 208, 247);
     font-weight: 700;
     margin-bottom: 5px;
   }
 
+  &__subtitle__number {
+    font-size: clamp(18px, 4vw, 20px);
+    position: absolute;
+    background-color: rgb(158, 89, 236);
+    padding: 5px 15px;
+    border-bottom-right-radius: 10px;
+    top: 0;
+    left: 0;
+  }
+
   &__subtitle_mar {
-    color: rgb(3, 247, 255);
+    color: rgb(82, 208, 247);
     font-size: clamp(18px, 4vw, 20px);
     font-weight: 700;
     margin-bottom: 15px;
@@ -357,19 +369,21 @@
 
 .button__save {
   margin-top: 40px;
-  color: $colorBlueTitle;
+  color: rgb(0, 255, 34);
   border-radius: 5px;
   padding: 4px 15px;
   font-weight: 700;
   font-size: clamp(18px, 4vw, 20px);
-  @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
+  @include buttonColor(rgb(3, 187, 28), rgba(0, 255, 34, 0.2), rgba(0, 255, 34, 0.2));
 }
 .button__create {
   margin-top: 20px;
-  color: $colorBlueTitle;
+  color: rgb(251, 255, 0);
   border-radius: 5px;
   padding: 4px 15px;
   font-weight: 700;
   font-size: clamp(18px, 4vw, 20px);
-  @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
+  // @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
+
+  @include buttonColor(rgb(251, 255, 0), rgba(251, 255, 0, 0.2), rgba(251, 255, 0, 0.2));
 }

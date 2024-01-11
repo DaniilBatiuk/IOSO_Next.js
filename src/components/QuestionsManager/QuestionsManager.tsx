@@ -2,6 +2,7 @@ import styles from "@/styles/CreateQuiz/CreateQuiz.module.scss";
 
 import { SubmitHandler, useForm, useFieldArray } from "react-hook-form";
 import OneQuiz from "../OneQuiz/OneQuiz";
+import React from "react";
 
 const QuestionsManager: React.FC = () => {
   const {
@@ -15,6 +16,7 @@ const QuestionsManager: React.FC = () => {
     defaultValues: {
       questionList: [{ question: "" }],
       answerList: [{ answer: "" }, { answer: "" }],
+      answerMultipleList: [{ answer: "" }, { answer: "" }, { answer: "" }],
     },
   });
 
@@ -27,7 +29,9 @@ const QuestionsManager: React.FC = () => {
       <form onSubmit={handleSubmit(onSubmit)} noValidate encType="multipart/form-data" className={`${styles.form}`}>
         <div className={`${styles.form__question__list}`}>
           {questionFields.map((field, index) => (
-            <OneQuiz key={field.id} control={control} />
+            <React.Fragment key={`key=${index}`}>
+              <OneQuiz control={control} numberQuiz={index} />
+            </React.Fragment>
           ))}
         </div>
         <div className="modal__button-div">

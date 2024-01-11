@@ -7,7 +7,7 @@ import Link from "next/link";
 import TextField from "@mui/material/TextField";
 export default function SignUp() {
   return (
-    <>
+    <div className={`${styles.signIn}`}>
       <Image src={SignUpBack.src} alt="SignInBack" fill={true} className={`${styles.signIn__photo}`} />
       <div className={`${styles.signIn__container}`}>
         <div className={`${styles.signIn__block}`}>
@@ -20,7 +20,6 @@ export default function SignUp() {
               <div className={`${styles.form__inputs}`}>
                 <TextField
                   fullWidth
-                  id="standard-basic"
                   label="Insert email"
                   variant="standard"
                   inputProps={{ style: { fontSize: 25 } }}
@@ -45,7 +44,6 @@ export default function SignUp() {
                 />
                 <TextField
                   fullWidth
-                  id="standard-basic"
                   label="Insert password"
                   variant="standard"
                   type="password"
@@ -112,6 +110,6 @@ export default function SignUp() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

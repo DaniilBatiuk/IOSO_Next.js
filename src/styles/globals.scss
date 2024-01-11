@@ -71,6 +71,20 @@ body {
 
 body {
   overflow-x: hidden;
+
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+    overflow: auto;
+    height: 5px;
+    background-color: rgb(29, 101, 110);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgb(2, 197, 223);
+  }
 }
 
 .wrapper {
