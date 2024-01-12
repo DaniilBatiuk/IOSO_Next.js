@@ -72,7 +72,7 @@ body {
 body {
   overflow-x: hidden;
 
-  overflow: auto;
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     display: block;
@@ -179,10 +179,14 @@ input:-webkit-autofill:active {
 }
 
 .MuiOutlinedInput-notchedOutline {
-  border: none;
-  border-radius: 0px;
-  border-bottom: 2px rgba(54, 169, 184, 1) solid;
-  transition-duration: 10ms;
+  border: none !important;
+  border-radius: 0px !important;
+  border-bottom: 2px rgba(54, 169, 184, 1) solid !important;
+  transition-duration: 10ms !important;
+
+  &:hover {
+    border-bottom: 3px rgb(0, 225, 255) solid !important;
+  }
 }
 
 .MuiPaper-root {

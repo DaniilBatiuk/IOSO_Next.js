@@ -50,28 +50,6 @@
   flex-wrap: wrap;
   color: white;
 
-  // & input {
-  //   outline: none;
-  //   background-color: inherit;
-  //   border-radius: 5px;
-  //   // border: 2px rgba(54, 169, 184, 1) solid;
-  //   padding: 9px 10px;
-
-  //   &:hover,
-  //   &:focus {
-  //     border: 2px solid rgb(0, 225, 255);
-  //   }
-
-  //   @media (max-width: 441.98px) {
-  //     flex: 1 1 auto;
-  //   }
-
-  //   &::placeholder {
-  //     color: rgb(179, 174, 174);
-  //     opacity: 1;
-  //   }
-  // }
-
   @media (max-width: 1111.98px) {
     flex: 1 1 auto;
     justify-content: center;

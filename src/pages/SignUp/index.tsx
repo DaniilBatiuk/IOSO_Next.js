@@ -20,6 +20,30 @@ export default function SignUp() {
               <div className={`${styles.form__inputs}`}>
                 <TextField
                   fullWidth
+                  label="Insert full name"
+                  variant="standard"
+                  inputProps={{ style: { fontSize: 25 } }}
+                  InputLabelProps={{ style: { fontSize: 25 } }}
+                  sx={{
+                    "& label.Mui-focused": {
+                      color: "white",
+                    },
+                    "& .MuiInput-underline:after": {
+                      borderBottomColor: "white",
+                    },
+                    "& .MuiInput-root:before": {
+                      borderBottomColor: "white",
+                    },
+                    "& .MuiInput-root:after": {
+                      borderBottomColor: "white",
+                    },
+                    ".MuiInput-root:hover:not(.Mui-disabled):before": {
+                      borderBottomColor: "white",
+                    },
+                  }}
+                />
+                <TextField
+                  fullWidth
                   label="Insert email"
                   variant="standard"
                   inputProps={{ style: { fontSize: 25 } }}

@@ -379,6 +379,7 @@
 .button__create {
   margin-top: 20px;
   color: rgb(251, 255, 0);
+  color: rgb(0, 255, 34);
   border-radius: 5px;
   padding: 4px 15px;
   font-weight: 700;
@@ -386,4 +387,5 @@
   // @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
 
   @include buttonColor(rgb(251, 255, 0), rgba(251, 255, 0, 0.2), rgba(251, 255, 0, 0.2));
+  @include buttonColor(rgb(3, 187, 28), rgba(0, 255, 34, 0.2), rgba(0, 255, 34, 0.2));
 }
