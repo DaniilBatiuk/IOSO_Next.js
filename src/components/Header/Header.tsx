@@ -9,6 +9,7 @@ type IHeader = {
 const Header: React.FC<IHeader> = ({ height }: IHeader) => {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [menuActive, setMenuActive] = useState<boolean>(false);
 
   useEffect(() => {
     setIsVisible(router.pathname === "/");
@@ -16,10 +17,12 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
 
   const menuOpen = () => {
     document.documentElement.classList.toggle("menu-open");
+    setMenuActive(prev => !prev);
   };
 
   return (
     <header className="header">
+      {menuActive && <div className="header__dark" onClick={() => setMenuActive(prev => !prev)}></div>}
       {!isVisible && (
         <style>{`
           .header:after {

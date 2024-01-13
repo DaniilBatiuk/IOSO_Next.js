@@ -84,6 +84,7 @@ body {
 
   &::-webkit-scrollbar-thumb {
     background: rgb(2, 197, 223);
+    border-radius: 30px;
   }
 }
 
@@ -191,4 +192,16 @@ input:-webkit-autofill:active {
 
 .MuiPaper-root {
   background-color: rgba(54, 169, 184, 1) !important;
+}
+
+.MuiPieArc-root {
+  stroke: none !important;
+  stroke-width: 0 !important;
+  stroke-linejoin: initial !important;
+}
+
+.MuiPopper-root {
+  font-weight: 800 !important;
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif !important;
 }
