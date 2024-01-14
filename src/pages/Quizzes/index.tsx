@@ -5,6 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
+import Quiz from "@/components/Quiz/Quiz";
 export default function Quizzes() {
   const [age, setAge] = useState("");
 
@@ -46,62 +47,8 @@ export default function Quizzes() {
           </form>
         </section>
         <section className={styles.list}>
-          <div className={styles.item}>
-            <div className={styles.item_head}>
-              <div className={styles.item_head_left}>
-                <div className={styles.item_status_open}>Active</div>
-                <div className={styles.item_data}>Created: 2024-1-03</div>
-              </div>
-              <div className={styles.item_deadline}>Deadline: 2024-1-03</div>
-            </div>
-            <div className={styles.item_title}>Add Two Numbers</div>
-            <div className={styles.item_bottom}>
-              <div className={styles.item_question}>10 Questions</div>
-              <div className={styles.item_button}>Quiz</div>
-            </div>
-          </div>
-          <div className={styles.item}>
-            <div className={styles.item_head}>
-              <div className={styles.item_head_left}>
-                <div className={styles.item_status_close}>Password</div>
-                <div className={styles.item_data}>Created: 2024-1-03</div>
-              </div>
-              <div className={styles.item_deadline}>Deadline: 2024-1-03</div>
-            </div>
-            <div className={styles.item_title}>Add Two Numbers Add Two Numbers Add Two Numbers Add Two Numbers</div>
-            <div className={styles.item_bottom}>
-              <div className={styles.item_question}>10 Questions</div>
-              <div className={styles.item_button}>Quiz</div>
-            </div>
-          </div>
-          <div className={styles.item}>
-            <div className={styles.item_head}>
-              <div className={styles.item_head_left}>
-                <div className={styles.item_status_close}>Password</div>
-                <div className={styles.item_data}>Created: 2024-1-03</div>
-              </div>
-              <div className={styles.item_deadline}>Deadline: 2024-1-03</div>
-            </div>
-            <div className={styles.item_title}>Add Two Numbers Add Two Numbers Add Two Numbers Add Two Numbers</div>
-            <div className={styles.item_bottom}>
-              <div className={styles.item_question}>10 Questions</div>
-              <div className={styles.item_button}>Quiz</div>
-            </div>
-          </div>
-          <div className={styles.item}>
-            <div className={styles.item_head}>
-              <div className={styles.item_head_left}>
-                <div className={styles.item_status_open}>Active</div>
-                <div className={styles.item_data}>Created: 2024-1-03</div>
-              </div>
-              <div className={styles.item_deadline}></div>
-            </div>
-            <div className={styles.item_title}>Add Two Numbers Add Two Numbers Add Two Numbers Add Two Numbers</div>
-            <div className={styles.item_bottom}>
-              <div className={styles.item_question}>10 Questions</div>
-              <div className={styles.item_button}>Quiz</div>
-            </div>
-          </div>
+          <Quiz status="Available" buttonText="Quiz" />
+          <Quiz status="Access key" buttonText="Quiz" />
         </section>
       </div>
     </>

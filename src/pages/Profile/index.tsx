@@ -1,9 +1,11 @@
 import styles from "@/styles/Profile/Profile.module.scss";
 import ProfileSvg from "@/../public/Profile.svg";
 import Image from "next/image";
-import * as React from "react";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { useState } from "react";
+import QuizHistory from "@/components/QuizHistory/QuizHistory";
+import MyQuizzes from "@/components/MyQuizzes/MyQuizzes";
+import Groups from "@/components/Groups/Groups";
 
 const data = [
   { value: 70, label: "create group" },
@@ -30,14 +32,8 @@ export default function Profile() {
               <div className={styles.info__email}>sportak50@gmail.com</div>
             </div>
             <div className={styles.info__result}>
-              <div className={styles.info__score}>
-                <div className={styles.info__number__passed}>10</div>
-                <div className={styles.info__score__text}>passed</div>
-              </div>
-              <div className={styles.info__score}>
-                <div className={styles.info__number__denied}>10</div>
-                <div className={styles.info__score__text}>denied</div>
-              </div>
+              <button className={styles.button__save}>New quiz</button>
+              <button className={styles.button__save}>New group</button>
             </div>
           </div>
         </div>
@@ -75,62 +71,9 @@ export default function Profile() {
           Groups
         </div>
       </div>
-      {activeMenuItem === 0 && (
-        <div className={styles.profile__main_2}>
-          <table className={styles.profile__table}>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Creator</th>
-                <th>Status</th>
-                <th>Correctly</th>
-                <th>Deadline</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className={styles.item}>
-                <td className={styles.item__title}>Regular Expression Matching Regular Expression Matching</td>
-                <td className={styles.item__creator}>Daniil Batiuk</td>
-                <td>
-                  <div className={`${styles.item__status_open}`}>Passed</div>
-                </td>
-                <td className={styles.item__data}>55.55%</td>
-                <td className={styles.item__deadline}>Mar 15 2021</td>
-                <td>
-                  <button className={styles.item__button}>Quiz</button>
-                </td>
-              </tr>
-              <tr className={styles.item}>
-                <td className={styles.item__title}>Regular Expressio</td>
-                <td className={styles.item__creator}>Daniil</td>
-                <td>
-                  <div className={`${styles.item__status_close}`}>Denied</div>
-                </td>
-                <td className={styles.item__data}>22.55%</td>
-                <td className={styles.item__deadline}>Mar 15 2021</td>
-                <td>
-                  <button className={styles.item__button}>Quiz</button>
-                </td>
-              </tr>
-              <tr className={styles.item}>
-                <td className={styles.item__title}>Regular Expression Matching Regular Expression Matching</td>
-                <td className={styles.item__creator}>Daniil Batiuk Daniil Batiuk</td>
-                <td>
-                  <div className={`${styles.item__status_close}`}>Denied</div>
-                </td>
-                <td className={styles.item__data}>75.14%</td>
-                <td className={styles.item__deadline}>Mar 15 2021</td>
-                <td>
-                  <button className={styles.item__button}>Quiz</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      )}
-      {activeMenuItem === 1 && <section className={styles.profile__main}>asdad</section>}
-      {activeMenuItem === 2 && <section className={styles.profile__main}>asasdasdasdasdasd</section>}
+      {activeMenuItem === 0 && <QuizHistory />}
+      {activeMenuItem === 1 && <MyQuizzes />}
+      {activeMenuItem === 2 && <Groups />}
     </div>
   );
 }

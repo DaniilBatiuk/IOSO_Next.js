@@ -16,7 +16,7 @@
     background-color: $backgroundColorBlue;
     border-radius: 10px;
     min-height: 82px;
-    padding: 19px 36px;
+    padding: 10px 36px;
 
     @media (max-width: 1041.98px) {
       margin-top: 20px;
@@ -89,101 +89,5 @@
 
   @media (max-width: 1041.98px) {
     flex-direction: column;
-  }
-}
-
-.item {
-  border-left: 4px rgb(0, 225, 255) solid;
-  color: rgb(190, 190, 190);
-  font-size: clamp(16px, 4vw, 18px);
-  background-color: $backgroundColorBlue;
-  border-radius: 10px;
-  padding: 12px;
-  width: 49.2%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 40px;
-
-  @media (max-width: 1041.98px) {
-    width: 100%;
-  }
-
-  &_head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &_head_left {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-  }
-
-  &_title {
-    color: white;
-    font-weight: 700;
-    text-wrap: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: clamp(20px, 4vw, 22px);
-  }
-
-  &_deadline {
-    text-align: end;
-
-    @media (max-width: 565.98px) {
-      width: 100px;
-    }
-  }
-
-  &_status_open {
-    text-align: center;
-    padding: 5px 24px;
-    color: rgba(30, 252, 11, 1);
-    background-color: rgba(30, 252, 11, 0.2);
-    background-color: rgb(18, 110, 9);
-    border-radius: 5px;
-    font-weight: 500;
-  }
-
-  &_bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &_data {
-    @media (max-width: 565.98px) {
-      width: 100px;
-    }
-  }
-  &_button {
-    color: $colorBlueTitle;
-    border-radius: 5px;
-    padding: 5px 29px;
-    font-weight: 700;
-    @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
-  }
-
-  &_status_close {
-    text-align: center;
-    padding: 5px 24px;
-    color: rgb(252, 73, 73);
-    background-color: rgba(255, 0, 0, 0.3);
-    background-color: rgb(117, 14, 14);
-    border-radius: 5px;
-    font-weight: 500;
-  }
-
-  &_deadline_none {
-    text-align: center;
-    text-align: center;
-    padding: 5px 24px;
-    color: rgb(229, 255, 0);
-    background-color: rgb(146, 137, 12);
-    border-radius: 5px;
-    font-weight: 500;
-    max-width: 115px;
   }
 }

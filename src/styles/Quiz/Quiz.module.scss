@@ -1,0 +1,109 @@
+@import "../../styles/variables.scss";
+
+.quiz__item__active {
+  border-left: 4px rgba(15, 175, 0, 1) solid !important;
+}
+
+.quiz__item__progress {
+  border-left: 4px rgb(206, 193, 17) solid !important;
+}
+
+.quiz__item__ended {
+  border-left: 4px rgb(148, 148, 148) solid !important;
+}
+
+.quiz__item__key {
+  border-left: 4px rgb(165, 5, 5) solid !important;
+}
+
+.quiz__item {
+  border-left: 4px solid;
+  color: rgb(190, 190, 190);
+  font-size: clamp(16px, 4vw, 18px);
+  background-color: $backgroundColorBlue;
+  border-radius: 10px;
+  padding: 12px;
+  width: 49.2%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+
+  @media (max-width: 1041.98px) {
+    width: 100%;
+  }
+
+  &_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_head_left {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  &_title {
+    color: white;
+    font-weight: 700;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(20px, 4vw, 22px);
+  }
+
+  &_deadline {
+    text-align: end;
+
+    @media (max-width: 565.98px) {
+      width: 100px;
+    }
+  }
+
+  &_status {
+    text-align: center;
+    padding: 5px 24px;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+
+  &_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_data {
+    @media (max-width: 565.98px) {
+      width: 100px;
+    }
+  }
+  &_button {
+    color: $colorBlueTitle;
+    border-radius: 5px;
+    padding: 5px 29px;
+    font-weight: 700;
+    @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
+  }
+
+  &_status_active {
+    color: rgba(30, 252, 11, 1);
+    background-color: rgb(9, 114, 0);
+  }
+
+  &_status_key {
+    color: rgb(255, 68, 68);
+    background-color: rgb(109, 0, 0);
+  }
+
+  &_status_ended {
+    color: rgb(187, 186, 186);
+    background-color: rgb(83, 83, 83);
+  }
+
+  &_status_progress {
+    color: rgb(229, 255, 0);
+    background-color: rgb(146, 137, 12);
+  }
+}

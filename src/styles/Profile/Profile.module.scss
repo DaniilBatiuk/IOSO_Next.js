@@ -31,7 +31,8 @@
   }
   &__list {
     display: flex;
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     column-gap: 30px;
   }
 
@@ -145,30 +146,6 @@
     display: flex;
     column-gap: 20px;
   }
-
-  &__score {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-  }
-
-  &__number__denied {
-    font-size: 18px;
-    background-color: rgba(164, 8, 8, 1);
-    border-radius: 30px;
-    padding: 8px;
-  }
-
-  &__number__passed {
-    font-size: 18px;
-    background-color: rgba(5, 171, 1, 1);
-    border-radius: 30px;
-    padding: 8px;
-  }
-
-  &__score__text {
-    font-size: 18px;
-  }
 }
 
 .profile {
@@ -260,7 +237,16 @@
     text-align: center;
     padding: 5px 24px;
     color: rgba(30, 252, 11, 1);
-    background-color: rgba(30, 252, 11, 0.2);
+    background-color: rgb(9, 114, 0);
+    border-radius: 5px;
+    font-weight: 500;
+  }
+
+  &__status_manager {
+    text-align: center;
+    padding: 5px 24px;
+    color: rgb(229, 255, 0);
+    background-color: rgb(146, 137, 12);
     border-radius: 5px;
     font-weight: 500;
   }
@@ -269,7 +255,7 @@
     text-align: center;
     padding: 5px 24px;
     color: rgb(255, 68, 68);
-    background-color: rgba(255, 0, 0, 0.3);
+    background-color: rgb(109, 0, 0);
     border-radius: 5px;
     font-weight: 500;
   }
@@ -281,8 +267,87 @@
     font-weight: 700;
     @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
 
-    // @media (max-width: 1012.98px) {
-    //   padding: 5px 38px;
-    // }
+    &__marLef {
+      color: rgb(255, 68, 68);
+      border-radius: 5px;
+      padding: 5px 29px;
+      font-weight: 700;
+      @include buttonColor(rgb(161, 0, 0), rgba(109, 0, 0, 0.5), rgba(214, 0, 0, 0.5));
+      margin-left: 20px;
+    }
+  }
+
+  &__action {
+    min-width: 280px;
+  }
+}
+
+.button__save {
+  margin-top: 20px;
+  color: rgb(0, 255, 34);
+  border-radius: 5px;
+  padding: 4px 15px;
+  font-weight: 700;
+  font-size: clamp(18px, 4vw, 20px);
+  @include buttonColor(rgb(3, 187, 28), rgba(0, 255, 34, 0.2), rgba(0, 255, 34, 0.2));
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 20px;
+
+  @media (max-width: 1041.98px) {
+    flex-direction: column;
+  }
+}
+
+.my_quizzes {
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: $backgroundColorBlue;
+    border-radius: 10px;
+    min-height: 82px;
+    padding: 10px 36px;
+
+    @media (max-width: 441.98px) {
+      padding: 19px 10px;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    color: transparent;
+    -webkit-text-stroke: 2px $colorBlueTitle;
+
+    @media (max-width: 1111.98px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: white;
+
+  @media (max-width: 1111.98px) {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  @media (max-width: 952.98px) {
+    gap: 10px;
   }
 }
