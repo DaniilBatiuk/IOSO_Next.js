@@ -6,7 +6,7 @@
     margin-bottom: 100px;
     margin-top: 40px;
     display: flex;
-    gap: 40px;
+    gap: 30px;
 
     @media (max-width: 936.98px) {
       gap: 20px;
@@ -99,8 +99,9 @@
   }
 
   &__body {
-    width: 29%;
+    width: 31%;
     min-width: 264px;
+    max-width: 395px;
     @media (max-width: 890.98px) {
       row-gap: 20px;
     }
@@ -361,6 +362,10 @@
 
 .marginTopLit {
   margin-top: 10px;
+}
+
+.marginTopMid {
+  margin-top: 20px;
 }
 
 .marginBot {

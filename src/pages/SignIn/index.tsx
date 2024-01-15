@@ -48,6 +48,7 @@ export default function SignIn() {
                   fullWidth
                   label="Insert password"
                   variant="standard"
+                  type="password"
                   inputProps={{ style: { fontSize: 25 } }}
                   InputLabelProps={{ style: { fontSize: 25 } }}
                   sx={{

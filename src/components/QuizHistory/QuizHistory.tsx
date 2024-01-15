@@ -24,7 +24,7 @@ const QuizHistory: React.FC = () => {
             <td className={styles.item__data}>55.55%</td>
             <td className={styles.item__deadline}>Mar 15 2021</td>
             <td>
-              <button className={styles.item__button}>Quiz</button>
+              <button className={styles.item__button}>View result</button>
             </td>
           </tr>
           <tr className={styles.item}>
@@ -36,7 +36,7 @@ const QuizHistory: React.FC = () => {
             <td className={styles.item__data}>22.55%</td>
             <td className={styles.item__deadline}>Mar 15 2021</td>
             <td>
-              <button className={styles.item__button}>Quiz</button>
+              <button className={styles.item__button}>View result</button>
             </td>
           </tr>
           <tr className={styles.item}>
@@ -48,7 +48,7 @@ const QuizHistory: React.FC = () => {
             <td className={styles.item__data}>75.14%</td>
             <td className={styles.item__deadline}>Mar 15 2021</td>
             <td>
-              <button className={styles.item__button}>Quiz</button>
+              <button className={styles.item__button}>View result</button>
             </td>
           </tr>
         </tbody>

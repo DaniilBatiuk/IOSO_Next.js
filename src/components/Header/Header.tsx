@@ -46,6 +46,9 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
                 <Link href="/Profile">Profile</Link>
               </li>
               <li className="header__item">
+                <Link href="/CreateGroup">Create group</Link>
+              </li>
+              <li className="header__item">
                 <Link href="/CreateQuiz">Create quiz</Link>
               </li>
               <li className="header__item">
