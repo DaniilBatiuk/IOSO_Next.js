@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
         main: "rgb(0, 225, 255)",
       },
       text: {
-        primary: "white",
+        primary: "#ffffff",
       },
     },
     typography: {

@@ -153,6 +153,8 @@
     margin-top: 20px;
     width: 100%;
     overflow-x: auto;
+    border: 1px rgb(55, 255, 255) solid;
+    border-radius: 10px;
 
     &::-webkit-scrollbar {
       display: block;
@@ -310,10 +312,18 @@
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    background-color: $backgroundColorBlue;
-    border-radius: 10px;
-    min-height: 82px;
+    background-color: rgba(70, 233, 255, 0.2);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    min-height: 75px;
     padding: 10px 36px;
+
+    @media (max-width: 1100.98px) {
+      justify-content: center;
+    }
+    @media (max-width: 952.98px) {
+      gap: 10px;
+    }
 
     @media (max-width: 441.98px) {
       padding: 19px 10px;
@@ -350,4 +360,19 @@
   @media (max-width: 952.98px) {
     gap: 10px;
   }
+}
+
+.main {
+  border: 1px rgba(55, 255, 255, 1) solid;
+  border-radius: 10px;
+  margin-top: 30px;
+
+  @media (max-width: 1041.98px) {
+    margin-top: 20px;
+  }
+}
+
+.button__active {
+  background-color: rgba(55, 255, 255, 0.1) !important;
+  border: 1px rgba(55, 255, 255, 1) solid !important;
 }

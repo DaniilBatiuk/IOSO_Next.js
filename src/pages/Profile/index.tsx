@@ -5,7 +5,6 @@ import { PieChart } from "@mui/x-charts/PieChart";
 import { useState } from "react";
 import QuizHistory from "@/components/QuizHistory/QuizHistory";
 import MyQuizzes from "@/components/MyQuizzes/MyQuizzes";
-import Groups from "@/components/Groups/Groups";
 
 const data = [
   { value: 70, label: "create group" },
@@ -65,15 +64,11 @@ export default function Profile() {
           Quiz history
         </div>
         <div className={activeMenuItem === 1 ? styles.profile__item__active : styles.profile__item} onClick={() => setActiveMenuItem(1)}>
-          My quizzes
-        </div>
-        <div className={activeMenuItem === 2 ? styles.profile__item__active : styles.profile__item} onClick={() => setActiveMenuItem(2)}>
-          Groups
+          My quizzes & Groups
         </div>
       </div>
       {activeMenuItem === 0 && <QuizHistory />}
       {activeMenuItem === 1 && <MyQuizzes />}
-      {activeMenuItem === 2 && <Groups />}
     </div>
   );
 }

@@ -66,7 +66,7 @@ body {
   font-weight: 300;
   font-size: 16px;
   background-color: rgba(56, 31, 88, 1);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 body {
@@ -204,4 +204,11 @@ input:-webkit-autofill:active {
   font-weight: 800 !important;
   font-size: 20px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif !important;
+}
+
+.MuiButtonGroup-root {
+  & button {
+    padding: 3px 10px !important;
+    padding-bottom: 0px !important;
+  }
 }

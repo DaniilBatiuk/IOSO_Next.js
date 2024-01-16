@@ -27,7 +27,7 @@
 
   &__logo {
     &:hover {
-      color: white;
+      color: rgb(255, 255, 255);
     }
     font-size: 38px;
     font-weight: 700;
@@ -79,7 +79,7 @@
       @media (max-width: 767.98px) {
         position: relative;
         font-size: 40px;
-        color: white;
+        color: rgb(255, 255, 255);
         &::before,
         &::after {
           content: "";

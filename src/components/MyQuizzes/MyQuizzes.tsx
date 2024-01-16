@@ -5,19 +5,30 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import styles from "@/styles/Profile/Profile.module.scss";
 import { useState } from "react";
-import Quiz from "../Quiz/Quiz";
+import QuizOrGroup from "../QuizOrGroup/QuizOrGroup";
+import { ButtonGroup, Button } from "@mui/material";
+import clsx from "clsx";
 
 const MyQuizzes: React.FC = () => {
   const [age, setAge] = useState("");
+  const [activeQuiz, setActiveQuiz] = useState(true);
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value);
   };
 
   return (
-    <>
-      <section className={`${styles.my_quizzes__form}`}>
-        <div className={`${styles.my_quizzes__title}`}>My quizzes</div>
+    <section className={styles.main}>
+      <div className={`${styles.my_quizzes__form}`}>
+        <ButtonGroup size="medium" aria-label="medium button group">
+          <Button className={clsx({ [styles.button__active]: activeQuiz === true })} onClick={() => setActiveQuiz(true)}>
+            Quizzes
+          </Button>
+          <Button className={clsx({ [styles.button__active]: activeQuiz === false })} onClick={() => setActiveQuiz(false)}>
+            Groups
+          </Button>
+        </ButtonGroup>
+
         <form className={`${styles.form}`}>
           <TextField id="standard-basic" label="Find by name" variant="standard" />
           <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
@@ -45,15 +56,21 @@ const MyQuizzes: React.FC = () => {
             </Select>
           </FormControl>
         </form>
-      </section>
-      <section className={styles.profile__main_2}>
-        <section className={styles.list}>
-          <Quiz status="Active" buttonText="Activate" />
-          <Quiz status="In progress" buttonText="Activate" />
-          <Quiz status="Ended" buttonText="Activate" />
-        </section>
-      </section>
-    </>
+      </div>
+      {activeQuiz === true ? (
+        <>
+          <QuizOrGroup status="Active" buttonText="Activate" type="quiz" />
+          <QuizOrGroup status="In progress" buttonText="Activate" type="quiz" />
+          <QuizOrGroup status="Ended" buttonText="Activate" type="quiz" />
+        </>
+      ) : (
+        <>
+          <QuizOrGroup status="Participant" buttonText="View" type="group" />
+          <QuizOrGroup status="Manager" buttonText="View" type="group" />
+          <QuizOrGroup status="Participant" buttonText="View" type="group" />
+        </>
+      )}
+    </section>
   );
 };
 export default MyQuizzes;
