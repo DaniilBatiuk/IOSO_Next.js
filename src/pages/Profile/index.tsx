@@ -5,6 +5,7 @@ import { PieChart } from "@mui/x-charts/PieChart";
 import { useState } from "react";
 import QuizHistory from "@/components/QuizHistory/QuizHistory";
 import MyQuizzes from "@/components/MyQuizzes/MyQuizzes";
+import Link from "next/link";
 
 const data = [
   { value: 70, label: "create group" },
@@ -21,7 +22,6 @@ export default function Profile() {
 
   return (
     <div className={styles.profile__container}>
-      <div className={styles.profile__title}>Profile</div>
       <section className={styles.profile__info}>
         <div className={styles.info__left}>
           <Image src={ProfileSvg.src} alt="Icon" width={200} height={200} priority={true} />
@@ -31,8 +31,12 @@ export default function Profile() {
               <div className={styles.info__email}>sportak50@gmail.com</div>
             </div>
             <div className={styles.info__result}>
-              <button className={styles.button__save}>New quiz</button>
-              <button className={styles.button__save}>New group</button>
+              <button className={styles.button__save}>
+                <Link href="/CreateQuiz">New quiz</Link>
+              </button>
+              <button className={styles.button__save}>
+                <Link href="/CreateGroup">New group</Link>
+              </button>
             </div>
           </div>
         </div>

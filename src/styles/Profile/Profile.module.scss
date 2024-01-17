@@ -4,6 +4,15 @@
   &__container {
     color: white;
     margin-bottom: 30px;
+    margin-top: 40px;
+
+    @media (max-width: 900.98px) {
+      margin-top: 30px;
+    }
+
+    @media (max-width: 500.98px) {
+      margin-top: 20px;
+    }
   }
   &__info {
     border-radius: 10px;
@@ -19,20 +28,10 @@
     }
   }
 
-  &__title {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    font-size: clamp(30px, 4vw, 36px);
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 1.8px;
-    color: transparent;
-    -webkit-text-stroke: 2px $colorBlueTitle;
-  }
   &__list {
     display: flex;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 22px;
     column-gap: 30px;
   }
 
@@ -133,11 +132,11 @@
 
   &__name {
     font-size: clamp(26px, 4vw, 30px);
-    font-weight: 700;
+    font-weight: 600;
   }
 
   &__email {
-    font-size: clamp(18px, 4vw, 20px);
+    font-size: clamp(16px, 4vw, 18px);
     font-weight: 500;
     color: rgb(179, 174, 174);
   }
@@ -187,7 +186,7 @@
     & th,
     td {
       padding: 1rem;
-      font-size: clamp(16px, 4vw, 18px);
+      font-size: clamp(14px, 4vw, 16px);
     }
 
     & th {
@@ -208,9 +207,9 @@
 
 .item {
   &__title {
-    font-size: clamp(18px, 4vw, 20px) !important;
+    font-size: clamp(16px, 4vw, 18px) !important;
     color: white;
-    font-weight: 600;
+    font-weight: 500;
     text-wrap: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -224,7 +223,7 @@
   }
 
   &__deadline {
-    min-width: 100px;
+    min-width: 130px;
   }
 
   &__creator {
@@ -267,6 +266,7 @@
     border-radius: 5px;
     padding: 5px 29px;
     font-weight: 700;
+    min-width: 153px;
     @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
 
     &__marLef {
@@ -288,9 +288,9 @@
   margin-top: 20px;
   color: rgb(0, 255, 34);
   border-radius: 5px;
-  padding: 4px 15px;
+  padding: 5px 15px;
   font-weight: 700;
-  font-size: clamp(18px, 4vw, 20px);
+  font-size: clamp(16px, 4vw, 18px);
   @include buttonColor(rgb(3, 187, 28), rgba(0, 255, 34, 0.2), rgba(0, 255, 34, 0.2));
 }
 
@@ -315,11 +315,13 @@
     background-color: rgba(70, 233, 255, 0.2);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    min-height: 75px;
-    padding: 10px 36px;
+    min-height: 65px;
+    padding: 5px 36px;
+    padding-top: 0px;
 
-    @media (max-width: 1100.98px) {
+    @media (max-width: 1054.98px) {
       justify-content: center;
+      padding: 10px 36px;
     }
     @media (max-width: 952.98px) {
       gap: 10px;
@@ -327,19 +329,6 @@
 
     @media (max-width: 441.98px) {
       padding: 19px 10px;
-    }
-  }
-
-  &__title {
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: 1.8px;
-    color: transparent;
-    -webkit-text-stroke: 2px $colorBlueTitle;
-
-    @media (max-width: 1111.98px) {
-      width: 100%;
-      text-align: center;
     }
   }
 }
@@ -365,7 +354,7 @@
 .main {
   border: 1px rgba(55, 255, 255, 1) solid;
   border-radius: 10px;
-  margin-top: 30px;
+  margin-top: 0px;
 
   @media (max-width: 1041.98px) {
     margin-top: 20px;

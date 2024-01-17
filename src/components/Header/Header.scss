@@ -18,7 +18,7 @@
   &::after {
     content: "";
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 0;
     width: 100vw;
     border-bottom: 2px rgba(186, 29, 200, 0.4) solid;
@@ -36,7 +36,7 @@
   }
 
   &__container {
-    padding-top: 20px;
+    padding-top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,7 +47,7 @@
     display: flex;
     column-gap: 50px;
     align-items: center;
-    font-size: 600;
+    font-size: 500;
     @media (max-width: 767.98px) {
       flex-direction: column;
       justify-content: center;
@@ -57,7 +57,7 @@
   }
 
   &__item {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 400;
     padding: 5px 12px;
     cursor: pointer;
@@ -65,8 +65,9 @@
     z-index: 5;
     @extend %hoverLink;
     &__sign-up {
-      font-size: 26px;
-      padding: 7px 25px;
+      font-size: 24px;
+      font-weight: 600;
+      padding: 5px 20px;
       border-radius: 5px;
       cursor: pointer;
       position: relative;

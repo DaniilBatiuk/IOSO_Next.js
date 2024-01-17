@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
       },
     },
     typography: {
-      fontSize: 18,
+      fontSize: 16,
     },
     components: {
       MuiInput: {
@@ -98,11 +98,18 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <div className="wrapper" ref={refComponent}>
-          <Header height={height} />
+          <header className={inter.className}>
+            <Header height={height} />
+          </header>
           <main className={inter.className}>
             <Component {...pageProps} />
           </main>
-          {isVisible && <Footer />}
+          {isVisible && (
+            <footer className={inter.className}>
+              {" "}
+              <Footer />
+            </footer>
+          )}
         </div>
       </ThemeProvider>
     </>

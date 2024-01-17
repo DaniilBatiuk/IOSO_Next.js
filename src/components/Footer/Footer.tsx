@@ -2,7 +2,7 @@ import styles from "@/components/Footer/Footer.module.scss";
 import Link from "next/link";
 const Footer: React.FC = () => {
   return (
-    <footer className={`${styles.end__contact}`}>
+    <div className={`${styles.end__contact}`}>
       <ul className={`${styles.end__list}`}>
         <li className={`${styles.end__item}`}>
           <Link href="/">Test</Link>
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
         <div className={`${styles.end__year}`}>2023 IOSO</div>
         <div className={`${styles.end__creator}`}>Created by Daniil Batiuk</div>
       </div>
-    </footer>
+    </div>
   );
 };
 export default Footer;

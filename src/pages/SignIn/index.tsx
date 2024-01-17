@@ -74,6 +74,7 @@ export default function SignIn() {
                     <Checkbox
                       defaultChecked
                       sx={{
+                        fontSize: 25,
                         color: "white",
                         "&.Mui-checked": {
                           color: "white",

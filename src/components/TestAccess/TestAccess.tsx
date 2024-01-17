@@ -65,7 +65,7 @@ const TestAccess: React.FC<TestAccessProp> = ({ type }: TestAccessProp) => {
         </div>
       )}
 
-      <div className={styles.right__info}>
+      <div className={clsx(styles.right__info, { [styles.marginButtonZero]: accessActive === 2 })}>
         <Image src={Information.src} alt="Icon" width={25} height={25} />
         {type === "quiz" ? (
           <div>
@@ -137,7 +137,7 @@ const TestAccess: React.FC<TestAccessProp> = ({ type }: TestAccessProp) => {
                     <TextField fullWidth id="standard-basic" type="password" label="Insert quiz access code" variant="standard" />
                   </>
                 )}
-                <button className={styles.button__create}>Create</button>
+                <button className={clsx(styles.button__create, { [styles.marginZero]: groupAccessActive === 1 })}>Create</button>
               </>
             )}
           </>

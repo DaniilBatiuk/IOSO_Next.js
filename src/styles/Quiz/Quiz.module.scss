@@ -19,14 +19,14 @@
 .quiz__item {
   border-left: 4px solid;
   color: rgb(190, 190, 190);
-  font-size: clamp(16px, 4vw, 18px);
+  font-size: clamp(14px, 4vw, 16px);
   background-color: $backgroundColorBlue;
   padding: 12px;
   width: 100%;
   border-top: 1px rgba(55, 255, 255, 1) solid;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 15px;
 
   &:last-child {
     border-bottom-left-radius: 10px;
@@ -50,11 +50,11 @@
 
   &_title {
     color: rgb(255, 255, 255);
-    font-weight: 700;
+    font-weight: 500;
     text-wrap: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: clamp(20px, 4vw, 22px);
+    font-size: clamp(18px, 4vw, 20px);
   }
 
   &_deadline {
@@ -82,25 +82,17 @@
   &_button {
     color: $colorBlueTitle;
     border-radius: 5px;
-    padding: 5px 29px;
+    padding: 5px 25px;
     font-weight: 700;
     @include buttonColor($colorBlueBorder, $colorBlueOpacity, $colorBlueOpacity);
-
-    @media (max-width: 449.98px) {
-      padding: 5px 19px;
-    }
 
     &_right {
       color: rgb(255, 68, 68);
       border-radius: 5px;
-      padding: 5px 29px;
+      padding: 5px 25px;
       font-weight: 700;
-      @include buttonColor(rgb(161, 0, 0), rgba(109, 0, 0, 0.5), rgba(214, 0, 0, 0.5));
+      @include buttonColor(rgb(161, 0, 0), rgba(109, 0, 0, 0.3), rgba(214, 0, 0, 0.3));
       margin-left: 10px;
-
-      @media (max-width: 449.98px) {
-        padding: 5px 19px;
-      }
     }
   }
 

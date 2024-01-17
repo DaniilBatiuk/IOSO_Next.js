@@ -207,8 +207,21 @@ input:-webkit-autofill:active {
 }
 
 .MuiButtonGroup-root {
+  padding-top: 5px;
   & button {
     padding: 3px 10px !important;
     padding-bottom: 0px !important;
   }
+}
+.MuiAvatar-root {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  width: 38px !important;
+  height: 38px !important;
+  border: 1px rgb(104, 104, 104) solid !important;
+}
+
+.MuiAvatarGroup-root .MuiAvatar-root:first-child {
+  color: rgb(94, 94, 94) !important;
+  background-color: rgb(161, 161, 161) !important;
 }

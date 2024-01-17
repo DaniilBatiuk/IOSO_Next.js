@@ -21,7 +21,7 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
   };
 
   return (
-    <header className="header">
+    <div className="header">
       {menuActive && <div className="header__dark" onClick={() => setMenuActive(prev => !prev)}></div>}
       {!isVisible && (
         <style>{`
@@ -30,7 +30,7 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
           }
           .header{
             background-color:rgba(255, 255, 255, 0.1);
-            padding-bottom:20px;
+            padding-bottom:10px;
           }
         `}</style>
       )}
@@ -43,6 +43,9 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
           <div className="header__body">
             <ul className="header__list">
               <li className="header__item">
+                <Link href="/Group/1">Group</Link>
+              </li>
+              <li className="header__item">
                 <Link href="/Profile">Profile</Link>
               </li>
               <li className="header__item">
@@ -52,7 +55,7 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
                 <Link href="/CreateQuiz">Create quiz</Link>
               </li>
               <li className="header__item">
-                <Link href="/Quizzes">Quizzes</Link>
+                <Link href="/Quizzes">Trends</Link>
               </li>
               <li className="header__item">
                 <Link href="/SignIn">Sign In</Link>
@@ -84,7 +87,7 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
           </div>
         )}
       </div>
-    </header>
+    </div>
   );
 };
 export default Header;

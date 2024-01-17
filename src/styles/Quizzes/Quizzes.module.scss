@@ -15,11 +15,13 @@
     background-color: rgba(70, 233, 255, 0.2);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    min-height: 75px;
-    padding: 10px 36px;
+    min-height: 65px;
+    padding: 5px 36px;
+    padding-top: 0px;
 
-    @media (max-width: 1100.98px) {
+    @media (max-width: 1054.98px) {
       justify-content: center;
+      padding: 10px 36px;
     }
     @media (max-width: 952.98px) {
       gap: 10px;
@@ -27,20 +29,6 @@
 
     @media (max-width: 441.98px) {
       padding: 19px 10px;
-    }
-  }
-
-  &__title {
-    font-size: clamp(30px, 4vw, 36px);
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 1.8px;
-    color: transparent;
-    -webkit-text-stroke: 2px $colorBlueTitle;
-
-    @media (max-width: 1111.98px) {
-      width: 100%;
-      text-align: center;
     }
   }
 }
