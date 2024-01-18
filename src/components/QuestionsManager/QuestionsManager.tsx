@@ -5,14 +5,7 @@ import OneQuiz from "../OneQuiz/OneQuiz";
 import React from "react";
 
 const QuestionsManager: React.FC = () => {
-  const {
-    register,
-    handleSubmit,
-    control,
-    watch,
-    reset,
-    formState: { errors },
-  } = useForm({
+  const { handleSubmit, control, register } = useForm({
     defaultValues: {
       questionList: [{ question: "" }],
       answerList: [{ answer: "" }, { answer: "" }],
@@ -30,7 +23,7 @@ const QuestionsManager: React.FC = () => {
         <div className={`${styles.form__question__list}`}>
           {questionFields.map((field, index) => (
             <React.Fragment key={`key=${index}`}>
-              <OneQuiz control={control} numberQuiz={index} />
+              <OneQuiz control={control} key={field.id} numberQuiz={index} remove={questionRemove} register={register} />
             </React.Fragment>
           ))}
         </div>

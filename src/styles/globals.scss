@@ -218,10 +218,14 @@ input:-webkit-autofill:active {
   font-weight: 600 !important;
   width: 38px !important;
   height: 38px !important;
-  border: 1px rgb(104, 104, 104) solid !important;
+  border: 1px rgb(129, 129, 129) solid !important;
 }
 
 .MuiAvatarGroup-root .MuiAvatar-root:first-child {
   color: rgb(94, 94, 94) !important;
   background-color: rgb(161, 161, 161) !important;
+}
+
+.MuiTypography-root {
+  font-size: 25px !important;
 }

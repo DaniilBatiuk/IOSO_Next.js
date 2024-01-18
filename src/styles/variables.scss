@@ -39,7 +39,6 @@ $borderGradient: linear-gradient(145deg, rgba(158, 61, 255, 1) 1.02%, rgba(193, 
 
 %hoverLink {
   position: relative;
-  position: relative;
   &::before {
     content: "";
     position: absolute;

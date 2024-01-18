@@ -10,9 +10,17 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [menuActive, setMenuActive] = useState<boolean>(false);
-
+  const [linkActiveUnderLine, setLinkActiveUnderLine] = useState<number>(0);
   useEffect(() => {
     setIsVisible(router.pathname === "/");
+
+    if (
+      (router.pathname !== "/Profile" && linkActiveUnderLine === 1) ||
+      (router.pathname !== "/Quizzes" && linkActiveUnderLine === 2) ||
+      (router.pathname !== "/SignIn" && linkActiveUnderLine === 3)
+    ) {
+      setLinkActiveUnderLine(0);
+    }
   }, [router]);
 
   const menuOpen = () => {
@@ -30,7 +38,7 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
           }
           .header{
             background-color:rgba(255, 255, 255, 0.1);
-            padding-bottom:10px;
+            padding-bottom:9px;
           }
         `}</style>
       )}
@@ -45,20 +53,44 @@ const Header: React.FC<IHeader> = ({ height }: IHeader) => {
               <li className="header__item">
                 <Link href="/Group/1">Group</Link>
               </li>
-              <li className="header__item">
-                <Link href="/Profile">Profile</Link>
+              <li className={linkActiveUnderLine === 1 && menuActive === false ? "header__item__active" : "header__item"}>
+                <Link
+                  href="/Profile"
+                  onClick={() => {
+                    setLinkActiveUnderLine(1);
+                    if (menuActive) {
+                      menuOpen();
+                    }
+                  }}
+                >
+                  Profile
+                </Link>
               </li>
-              <li className="header__item">
-                <Link href="/CreateGroup">Create group</Link>
+              <li className={linkActiveUnderLine === 2 && menuActive === false ? "header__item__active" : "header__item"}>
+                <Link
+                  href="/Quizzes"
+                  onClick={() => {
+                    setLinkActiveUnderLine(2);
+                    if (menuActive) {
+                      menuOpen();
+                    }
+                  }}
+                >
+                  Trends
+                </Link>
               </li>
-              <li className="header__item">
-                <Link href="/CreateQuiz">Create quiz</Link>
-              </li>
-              <li className="header__item">
-                <Link href="/Quizzes">Trends</Link>
-              </li>
-              <li className="header__item">
-                <Link href="/SignIn">Sign In</Link>
+              <li className={linkActiveUnderLine === 3 && menuActive === false ? "header__item__active" : "header__item"}>
+                <Link
+                  href="/SignIn"
+                  onClick={() => {
+                    setLinkActiveUnderLine(3);
+                    if (menuActive) {
+                      menuOpen();
+                    }
+                  }}
+                >
+                  Sign In
+                </Link>
               </li>
               <li className="header__item__sign-up">
                 <Link href="/SignUp">Sign Up</Link>

@@ -13,9 +13,12 @@ import ListItemText from "@mui/material/ListItemText";
 type OneQuizProp = {
   control: any;
   numberQuiz: number;
+  remove: any;
+  key: string;
+  register: any;
 };
 
-const OneQuiz = ({ control, numberQuiz }: OneQuizProp) => {
+const OneQuiz = ({ control, numberQuiz, remove, key, register }: OneQuizProp) => {
   const [questionType, setQuestionType] = useState<string>("");
   const [rightAnswer, setRightAnswer] = useState<string>("");
   const [rightMultipleAnswer, setMultipleRightAnswer] = useState<string[]>([]);
@@ -39,8 +42,19 @@ const OneQuiz = ({ control, numberQuiz }: OneQuizProp) => {
   const { fields: answerMultipleFields, append: answerMultipleAppend, remove: answerMultipleRemove } = useFieldArray({ control, name: "answerMultipleList" });
 
   return (
-    <div className={styles.form__list__item}>
+    <div className={styles.form__list__item} key={key}>
       <div className={styles.right__subtitle__number}>{`${numberQuiz + 1}`}</div>
+      {numberQuiz >= 1 && (
+        <div className={styles.close}>
+          <svg onClick={() => remove(numberQuiz)} xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16" id="IconChangeColor">
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+              id="mainIconPathAttribute"
+              fill="#00e1ff"
+            ></path>
+          </svg>
+        </div>
+      )}
       <div className={styles.right__subtitle}>{`Question type`}</div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: "100% " }}>
         <InputLabel>Select question type</InputLabel>
@@ -51,7 +65,7 @@ const OneQuiz = ({ control, numberQuiz }: OneQuizProp) => {
         </Select>
       </FormControl>
       <div className={`${styles.right__subtitle} ${styles.marginTop}`}>Question</div>
-      <TextField fullWidth label="Insert question" variant="standard" />
+      <TextField fullWidth label="Insert question" variant="standard" {...register(`questionList.${numberQuiz}.question`)} />
       {questionType === "1" ? (
         <>
           <div className={`${styles.right__subtitle} ${styles.marginTop}`}>Answers</div>

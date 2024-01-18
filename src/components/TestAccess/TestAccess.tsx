@@ -7,13 +7,13 @@ import Person from "@/../public/Person.svg";
 import Planet from "@/../public/Planet.svg";
 import Private from "@/../public/Private.svg";
 import Information from "@/../public/Information.svg";
-import Exist from "@/../public/Exist.svg";
-import Create from "@/../public/Create.svg";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import Exist from "@/../public/Exist.svg";
+import Create from "@/../public/Create.svg";
 
 type TestAccessProp = {
   type: string;
@@ -21,9 +21,7 @@ type TestAccessProp = {
 
 const TestAccess: React.FC<TestAccessProp> = ({ type }: TestAccessProp) => {
   const [accessActive, setAccessActive] = useState<number>(type === "quiz" ? 0 : 1);
-  const [groupActive, setGroupActive] = useState<number>(0);
-  const [groupAccessActive, setGroupAccessActive] = useState<number>(0);
-
+  const [groupSectionActive, setGroupSectionActive] = useState<number>(0);
   const [age, setAge] = useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -90,20 +88,32 @@ const TestAccess: React.FC<TestAccessProp> = ({ type }: TestAccessProp) => {
         )}
         {accessActive === 3 && (
           <>
-            <div className={styles.right__subtitle_mar}>Group</div>
+            <div className={styles.right__subtitle}>Group</div>
+            <FormControl variant="standard" sx={{ m: 1, minWidth: "100% " }}>
+              <InputLabel id="demo-simple-select-standard-label">Select group</InputLabel>
+              <Select labelId="demo-simple-select-standard-label" id="demo-simple-select-standard" value={age} onChange={handleChange} label="Age">
+                <MenuItem value={1}>1</MenuItem>
+                <MenuItem value={2}>2</MenuItem>
+                <MenuItem value={3}>3</MenuItem>
+                <MenuItem value={5}>3</MenuItem>
+                <MenuItem value={10}>3</MenuItem>
+                <MenuItem value={"Infinity"}>Infinity</MenuItem>
+              </Select>
+            </FormControl>
+            <div className={`${styles.right__subtitle_mar} ${styles.marginTopMid}`}>Group section</div>
             <div className={`${styles.right__list} ${styles.marginBot}`}>
-              <button type="button" className={clsx(styles.right__item, { [styles.right__item__active]: groupActive === 0 })} onClick={() => setGroupActive(0)}>
+              <button type="button" className={clsx(styles.right__item, { [styles.right__item__active]: groupSectionActive === 0 })} onClick={() => setGroupSectionActive(0)}>
                 <Image src={Exist.src} alt="Icon" width={30} height={30} />
                 <div>Exist</div>
               </button>
-              <button type="button" className={clsx(styles.right__item, { [styles.right__item__active]: groupActive === 1 })} onClick={() => setGroupActive(1)}>
+              <button type="button" className={clsx(styles.right__item, { [styles.right__item__active]: groupSectionActive === 1 })} onClick={() => setGroupSectionActive(1)}>
                 <Image src={Create.src} alt="Icon" width={30} height={30} />
                 <div>Create</div>
               </button>
             </div>
-            {groupActive === 0 ? (
+            {groupSectionActive === 0 ? (
               <FormControl variant="standard" sx={{ m: 1, minWidth: "100% " }}>
-                <InputLabel id="demo-simple-select-standard-label">Select group</InputLabel>
+                <InputLabel id="demo-simple-select-standard-label">Select group section</InputLabel>
                 <Select labelId="demo-simple-select-standard-label" id="demo-simple-select-standard" value={age} onChange={handleChange} label="Age">
                   <MenuItem value={1}>1</MenuItem>
                   <MenuItem value={2}>2</MenuItem>
@@ -115,29 +125,9 @@ const TestAccess: React.FC<TestAccessProp> = ({ type }: TestAccessProp) => {
               </FormControl>
             ) : (
               <>
-                <TextField fullWidth id="standard-basic" label="Insert group name" variant="standard" />
-                <div className={`${styles.right__subtitle_mar} ${styles.marginTop}`}>Group access type</div>
-                <div className={`${styles.right__list} ${styles.marginBot}`}>
-                  <button type="button" className={clsx(styles.right__item, { [styles.right__item__active]: groupAccessActive === 0 })} onClick={() => setGroupAccessActive(0)}>
-                    <Image src={Private.src} alt="Icon" width={30} height={30} />
-                    <div>Public access code</div>
-                  </button>
-                  <button type="button" className={clsx(styles.right__item, { [styles.right__item__active]: groupAccessActive === 1 })} onClick={() => setGroupAccessActive(1)}>
-                    <Image src={Planet.src} alt="Icon" width={30} height={30} />
-                    <div>Public</div>
-                  </button>
-                </div>
-                <div className={styles.right__info}>
-                  <Image src={Information.src} alt="Icon" width={25} height={25} />
-                  <div>{groupAccessActive === 0 ? "Anyone who has access code will be able to join the group" : "Anyone will be able to join the group"}</div>
-                </div>
-                {groupAccessActive === 0 && (
-                  <>
-                    <div className={styles.right__subtitle}>Access code</div>
-                    <TextField fullWidth id="standard-basic" type="password" label="Insert quiz access code" variant="standard" />
-                  </>
-                )}
-                <button className={clsx(styles.button__create, { [styles.marginZero]: groupAccessActive === 1 })}>Create</button>
+                <TextField fullWidth id="standard-basic" label="Insert group section name" variant="standard" />
+
+                <button className={styles.button__create}>Create</button>
               </>
             )}
           </>
