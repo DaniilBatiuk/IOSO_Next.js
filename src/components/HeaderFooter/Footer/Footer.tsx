@@ -1,35 +1,8 @@
-import styles from "@/components/Footer/Footer.module.scss";
+import styles from "../Footer/Footer.module.scss";
 import Link from "next/link";
 const Footer: React.FC = () => {
   return (
     <div className={`${styles.end__contact}`}>
-      <ul className={`${styles.end__list}`}>
-        <li className={`${styles.end__item}`}>
-          <Link href="/">Test</Link>
-        </li>
-        <li className={`${styles.end__item}`}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-            <g fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-              <path d="M0 0h24v24H0z" />
-              <path fill="currentColor" d="M12 7a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7" />
-            </g>
-          </svg>
-        </li>
-        <li className={`${styles.end__item}`}>
-          <Link href="/">About</Link>
-        </li>
-        <li className={`${styles.end__item}`}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-            <g fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-              <path d="M0 0h24v24H0z" />
-              <path fill="currentColor" d="M12 7a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7" />
-            </g>
-          </svg>
-        </li>
-        <li className={`${styles.end__item}`}>
-          <Link href="/">Contacts</Link>
-        </li>
-      </ul>
       <ul className={`${styles.end__iconlist}`}>
         <li className={`${styles.end__icon}`}>
           <Link href="/">

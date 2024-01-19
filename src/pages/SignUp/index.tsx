@@ -1,4 +1,4 @@
-import styles from "@/styles/SignIn/SignIn.module.scss";
+import styles from "@/styles/SignIn.module.scss";
 import Image from "next/image";
 import SignUpBack from "@/../public/SignUpBack.png";
 import SignUpFront from "@/../public/SignUpFront.png";

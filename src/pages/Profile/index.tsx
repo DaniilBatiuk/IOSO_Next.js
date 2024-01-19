@@ -1,19 +1,19 @@
-import styles from "@/styles/Profile/Profile.module.scss";
+import styles from "@/styles/Profile.module.scss";
 import ProfileSvg from "@/../public/Profile.svg";
 import Image from "next/image";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { useState } from "react";
-import QuizHistory from "@/components/QuizHistory/QuizHistory";
-import MyQuizzes from "@/components/MyQuizzes/MyQuizzes";
+import QuizHistory from "@/components/Profile/QuizHistory";
+import MyQuizzes from "@/components/Profile/MyQuizzes";
 import Link from "next/link";
 
-const data = [
+const DATA = [
   { value: 70, label: "create group" },
   { value: 20, label: "create test" },
   { value: 10, label: "pass test" },
 ];
 
-const colors = {
+const COLORS = {
   colors: ["rgb(27, 200, 231)", "rgba(255, 251, 9, 0.966)", "rgba(245, 22, 226, 0.842)"],
 };
 
@@ -50,7 +50,7 @@ export default function Profile() {
                   outerRadius: 70,
                   paddingAngle: 2,
                   cornerRadius: 5,
-                  data: data,
+                  data: DATA,
                   highlightScope: { faded: "global", highlighted: "item" },
                   faded: { innerRadius: 30, additionalRadius: -30, color: "gray" },
                 },
@@ -58,7 +58,7 @@ export default function Profile() {
               width={340}
               height={174}
               margin={{ right: 180 }}
-              {...colors}
+              {...COLORS}
             />
           </div>
         </div>

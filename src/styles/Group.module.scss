@@ -130,6 +130,7 @@
       &__title {
         font-weight: 400;
         font-size: clamp(16px, 4vw, 18px);
+        height: 19px;
         text-wrap: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;

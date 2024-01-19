@@ -1,4 +1,4 @@
-import styles from "@/styles/Quizzes/Quizzes.module.scss";
+import styles from "@/styles/Quizzes.module.scss";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";

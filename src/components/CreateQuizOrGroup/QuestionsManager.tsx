@@ -1,7 +1,7 @@
-import styles from "@/styles/CreateQuiz/CreateQuiz.module.scss";
+import styles from "@/styles/CreateQuiz.module.scss";
 
 import { SubmitHandler, useForm, useFieldArray } from "react-hook-form";
-import OneQuiz from "../OneQuiz/OneQuiz";
+import OneQuiz from "./OneQuiz";
 import React from "react";
 
 const QuestionsManager: React.FC = () => {

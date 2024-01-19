@@ -1,13 +1,15 @@
 import "@/styles/globals.scss";
-import "@/components/Header/Header.scss";
+import "@/components/HeaderFooter/Header/Header.scss";
+import "@/components/UI/Modal/Modal.scss";
 import { Inter } from "@next/font/google";
 import type { AppProps } from "next/app";
-import Header from "@/components/Header/Header";
+import Header from "@/components/HeaderFooter/Header/Header";
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Footer from "@/components/Footer/Footer";
+import Footer from "@/components/HeaderFooter/Footer/Footer";
 import { createTheme, ThemeProvider } from "@mui/material";
+
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],

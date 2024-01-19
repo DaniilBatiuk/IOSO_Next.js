@@ -1,4 +1,4 @@
-import styles from "@/styles/Profile/Profile.module.scss";
+import styles from "@/styles/Profile.module.scss";
 
 const QuizHistory: React.FC = () => {
   return (

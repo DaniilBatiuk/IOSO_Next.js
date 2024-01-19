@@ -1,5 +1,7 @@
-import styles from "@/styles/Quiz/Quiz.module.scss";
+import styles from "@/styles/Quiz.module.scss";
 import clsx from "clsx";
+import { useState } from "react";
+import Modal from "../UI/Modal/Modal";
 
 type QuizOrGroupProp = {
   status: string;
@@ -8,6 +10,8 @@ type QuizOrGroupProp = {
 };
 
 const QuizOrGroup: React.FC<QuizOrGroupProp> = ({ status, buttonText, type }: QuizOrGroupProp) => {
+  const [activeModal, setActiveModal] = useState(false);
+
   return (
     <div
       className={clsx(styles.quiz__item, {
@@ -17,6 +21,20 @@ const QuizOrGroup: React.FC<QuizOrGroupProp> = ({ status, buttonText, type }: Qu
         [styles.quiz__item__key]: status === "Access key",
       })}
     >
+      <Modal active={activeModal} setActive={setActiveModal} maxDivWidth="600px">
+        <div className={styles.modal__head}>
+          <h2 className={styles.modal__title}>{buttonText === "Activate" ? "Activate the quiz?" : buttonText === "Quiz" ? "Pass the quiz?" : "Leave the group?"}</h2>
+          <div className={styles.modal__text}>
+            {buttonText === "Activate" ? "You will be able to pass the quiz after activation" : buttonText === "Quiz" ? "Attempts left: 2" : "You will be removed from the group"}
+          </div>
+        </div>
+        <div className={styles.modal__buttons}>
+          <button className={styles.modal__button__cancel} onClick={() => setActiveModal(false)}>
+            Cancel
+          </button>
+          <button className={buttonText === "View" ? styles.modal__button__leave : styles.modal__button__activate}>{buttonText === "View" ? "Leave" : buttonText}</button>
+        </div>
+      </Modal>
       <div className={styles.quiz__item_head}>
         <div className={styles.quiz__item_head_left}>
           <div
@@ -36,11 +54,20 @@ const QuizOrGroup: React.FC<QuizOrGroupProp> = ({ status, buttonText, type }: Qu
       <div className={styles.quiz__item_bottom}>
         <div className={styles.quiz__item_question}> {type === "quiz" ? "10 Questions" : "10 Participants"}</div>
         {buttonText !== "View" ? (
-          <button className={styles.quiz__item_button}>{buttonText}</button>
+          <button
+            className={styles.quiz__item_button}
+            onClick={() => {
+              if (buttonText !== "Join") setActiveModal(true);
+            }}
+          >
+            {buttonText}
+          </button>
         ) : (
           <div className={styles.quiz__item_group_button}>
             <button className={styles.quiz__item_button}>{buttonText}</button>
-            <button className={styles.quiz__item_button_right}>Leave</button>
+            <button className={styles.quiz__item_button_right} onClick={() => setActiveModal(true)}>
+              Leave
+            </button>
           </div>
         )}
       </div>

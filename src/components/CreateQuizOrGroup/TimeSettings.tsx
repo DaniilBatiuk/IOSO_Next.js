@@ -1,4 +1,4 @@
-import styles from "@/styles/CreateQuiz/CreateQuiz.module.scss";
+import styles from "@/styles/CreateQuiz.module.scss";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";

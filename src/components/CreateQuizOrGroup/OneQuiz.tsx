@@ -4,7 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { useState } from "react";
 import { useFieldArray } from "react-hook-form";
-import styles from "@/styles/CreateQuiz/CreateQuiz.module.scss";
+import styles from "@/styles/CreateQuiz.module.scss";
 import TextField from "@mui/material/TextField";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import Checkbox from "@mui/material/Checkbox";

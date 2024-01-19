@@ -1,4 +1,4 @@
-import styles from "@/styles/Profile/Profile.module.scss";
+import styles from "@/styles/Profile.module.scss";
 
 const Groups: React.FC = () => {
   return (

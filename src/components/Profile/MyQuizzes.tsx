@@ -3,7 +3,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
-import styles from "@/styles/Profile/Profile.module.scss";
+import styles from "@/styles/Profile.module.scss";
 import { useState } from "react";
 import QuizOrGroup from "../QuizOrGroup/QuizOrGroup";
 import { ButtonGroup, Button } from "@mui/material";

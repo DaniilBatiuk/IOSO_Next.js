@@ -1,8 +1,8 @@
-import styles from "@/styles/CreateQuiz/CreateQuiz.module.scss";
+import styles from "@/styles/CreateQuiz.module.scss";
 import { clsx } from "clsx";
 import { useState } from "react";
-import BasicSettings from "@/components/BasicSettings/BasicSettings";
-import TestAccess from "@/components/TestAccess/TestAccess";
+import BasicSettings from "@/components/CreateQuizOrGroup/BasicSettings";
+import TestAccess from "@/components/CreateQuizOrGroup/TestAccess";
 
 export default function CreateGroup() {
   const [active, setActive] = useState<number>(0);

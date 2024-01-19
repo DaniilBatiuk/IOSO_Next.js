@@ -1,4 +1,4 @@
-import styles from "@/styles/Group/Group.module.scss";
+import styles from "@/styles/Group.module.scss";
 import { Avatar } from "@mui/material";
 import Complete from "@/../public/Complete.svg";
 import Image from "next/image";
