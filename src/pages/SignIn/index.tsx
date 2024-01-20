@@ -1,12 +1,13 @@
-import styles from "@/styles/SignIn.module.scss";
-import Image from "next/image";
 import SignInBack from "@/../public/SignInBack.png";
 import SignInFront from "@/../public/SignInFront.png";
 import Button from "@/components/UI/Button/Button";
-import Link from "next/link";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
+import styles from "@/styles/SignIn.module.scss";
 import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import TextField from "@mui/material/TextField";
+import Image from "next/image";
+import Link from "next/link";
+
 export default function SignIn() {
   return (
     <div className={`${styles.signIn}`}>

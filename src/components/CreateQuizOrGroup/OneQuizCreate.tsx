@@ -1,24 +1,25 @@
+import styles from "@/styles/CreateQuiz.module.scss";
+import { ICONS } from "@/utils/config/icons";
+import Checkbox from "@mui/material/Checkbox";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { useState } from "react";
-import { useFieldArray } from "react-hook-form";
-import styles from "@/styles/CreateQuiz.module.scss";
-import TextField from "@mui/material/TextField";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import Checkbox from "@mui/material/Checkbox";
 import ListItemText from "@mui/material/ListItemText";
+import MenuItem from "@mui/material/MenuItem";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import TextField from "@mui/material/TextField";
+import { useState } from "react";
+import { UseFieldArrayRemove, useFieldArray } from "react-hook-form";
 
-type OneQuizProp = {
+type OneQuizCreateProp = {
   control: any;
   numberQuiz: number;
-  remove: any;
+  remove: UseFieldArrayRemove;
   key: string;
   register: any;
 };
 
-const OneQuiz = ({ control, numberQuiz, remove, key, register }: OneQuizProp) => {
+const OneQuizCreate = ({ control, numberQuiz, remove, key, register }: OneQuizCreateProp) => {
   const [questionType, setQuestionType] = useState<string>("");
   const [rightAnswer, setRightAnswer] = useState<string>("");
   const [rightMultipleAnswer, setMultipleRightAnswer] = useState<string[]>([]);
@@ -44,17 +45,7 @@ const OneQuiz = ({ control, numberQuiz, remove, key, register }: OneQuizProp) =>
   return (
     <div className={styles.form__list__item} key={key}>
       <div className={styles.right__subtitle__number}>{`${numberQuiz + 1}`}</div>
-      {numberQuiz >= 1 && (
-        <div className={styles.close}>
-          <svg onClick={() => remove(numberQuiz)} xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16" id="IconChangeColor">
-            <path
-              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-              id="mainIconPathAttribute"
-              fill="#00e1ff"
-            ></path>
-          </svg>
-        </div>
-      )}
+      {numberQuiz >= 1 && <div className={styles.close}>{ICONS.close({ onClick: () => remove(numberQuiz) })}</div>}
       <div className={styles.right__subtitle}>{`Question type`}</div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: "100% " }}>
         <InputLabel>Select question type</InputLabel>
@@ -73,15 +64,7 @@ const OneQuiz = ({ control, numberQuiz, remove, key, register }: OneQuizProp) =>
             {answerFields.map((field, index) => (
               <div key={field.id} className={`${styles.form__answers__div}`}>
                 <TextField fullWidth label={`Insert answer ${index + 1}`} variant="standard" />
-                {index > 1 && (
-                  <svg onClick={() => answerRemove(index)} xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16" id="IconChangeColor">
-                    <path
-                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                      id="mainIconPathAttribute"
-                      fill="rgba(54, 169, 184, 1)"
-                    ></path>
-                  </svg>
-                )}
+                {index > 1 && ICONS.close({ onClick: () => answerRemove(numberQuiz) })}
               </div>
             ))}
           </div>
@@ -110,24 +93,7 @@ const OneQuiz = ({ control, numberQuiz, remove, key, register }: OneQuizProp) =>
           {answerMultipleFields.map((field, index) => (
             <div key={field.id} className={`${styles.form__answers__div}`}>
               <TextField fullWidth label={`Insert answer ${index + 1}`} variant="standard" />
-              {index > 2 && (
-                <svg
-                  onClick={() => answerMultipleRemove(index)}
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  fill="currentColor"
-                  className="bi bi-x"
-                  viewBox="0 0 16 16"
-                  id="IconChangeColor"
-                >
-                  <path
-                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                    id="mainIconPathAttribute"
-                    fill="rgba(54, 169, 184, 1)"
-                  ></path>
-                </svg>
-              )}
+              {index > 2 && ICONS.close({ onClick: () => answerMultipleRemove(numberQuiz) })}
             </div>
           ))}
 
@@ -187,4 +153,4 @@ const OneQuiz = ({ control, numberQuiz, remove, key, register }: OneQuizProp) =>
   );
 };
 
-export default OneQuiz;
+export default OneQuizCreate;

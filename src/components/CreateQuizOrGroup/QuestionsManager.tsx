@@ -1,7 +1,7 @@
 import styles from "@/styles/CreateQuiz.module.scss";
 
 import { SubmitHandler, useForm, useFieldArray } from "react-hook-form";
-import OneQuiz from "./OneQuiz";
+import OneQuizCreate from "./OneQuizCreate";
 import React from "react";
 
 const QuestionsManager: React.FC = () => {
@@ -23,7 +23,7 @@ const QuestionsManager: React.FC = () => {
         <div className={`${styles.form__question__list}`}>
           {questionFields.map((field, index) => (
             <React.Fragment key={`key=${index}`}>
-              <OneQuiz control={control} key={field.id} numberQuiz={index} remove={questionRemove} register={register} />
+              <OneQuizCreate control={control} key={field.id} numberQuiz={index} remove={questionRemove} register={register} />
             </React.Fragment>
           ))}
         </div>

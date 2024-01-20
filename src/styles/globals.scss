@@ -227,5 +227,5 @@ input:-webkit-autofill:active {
 }
 
 .MuiTypography-root {
-  font-size: 25px !important;
+  font-size: clamp(20px, 4vw, 22px) !important;
 }

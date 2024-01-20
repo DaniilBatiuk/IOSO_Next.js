@@ -91,7 +91,7 @@ export default function CreateQuiz() {
                     fill="white"
                   />
                 </svg>
-                <div className={styles.create__text}>Test access</div>
+                <div className={styles.create__text}>Quiz access</div>
               </button>
               <button
                 onClick={() => {

@@ -2,6 +2,7 @@ import styles from "@/styles/Group.module.scss";
 import { Avatar } from "@mui/material";
 import Complete from "@/../public/Complete.svg";
 import Image from "next/image";
+import Link from "next/link";
 function stringToColor(string: string) {
   let hash = 0;
   let i;
@@ -63,17 +64,17 @@ const Group: React.FC = () => {
           <div className={styles.left__section}>
             <div className={styles.left__section__title}>Create group 123 in progress Create group 123 in progress </div>
             <div className={styles.left__section__body}>
-              <div className={styles.left__section__test}>
+              <Link href="/QuizPass/1" className={styles.left__section__test}>
                 <div className={styles.left__section__test__title}>Quiz in 1 mun</div>
                 <Image src={Complete.src} alt="Icon" width={35} height={35} />
-              </div>
-              <div className={styles.left__section__test}>
+              </Link>
+              <Link href="/QuizPass/1" className={styles.left__section__test}>
                 <div className={styles.left__section__test__title}>Quiz in 1 mun</div>
-              </div>
-              <div className={styles.left__section__test}>
+              </Link>
+              <Link href="/QuizPass/1" className={styles.left__section__test}>
                 <div className={styles.left__section__test__title}>Quiz in 1 mun Create group 123 in progress Create group 123 in progress Create group 123 in Create group 123 in progress</div>
                 <Image src={Complete.src} alt="Icon" width={35} height={35} />
-              </div>
+              </Link>
             </div>
           </div>
           <div className={styles.left__section}>
