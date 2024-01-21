@@ -73,7 +73,6 @@ export default function SignIn() {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      defaultChecked
                       sx={{
                         color: "white",
                         "&.Mui-checked": {
